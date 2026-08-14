@@ -31,7 +31,7 @@ main{max-width:1500px;margin:auto;padding:20px 24px 26px}.page{display:none}.pag
 .card-head h2{font-size:18px;margin:0;display:flex;align-items:center;gap:8px}.more{border:0;background:none;color:#1d2b43;font-size:12px;padding:3px 0}
 .notice-item,.biz-item{padding:11px 2px;border-bottom:1px solid var(--line)}.notice-item:last-child,.biz-item:last-child{border-bottom:0}
 .notice-row{display:grid;grid-template-columns:88px 1fr;gap:8px;align-items:start}.date{color:#123d88;font-weight:900;font-size:12px;padding-top:2px}
-.notice-title,.biz-title{font-size:15px;font-weight:900;color:#111}.notice-text,.biz-text{font-size:11px;color:#49566b;line-height:1.55;margin-top:4px}
+.notice-title,.biz-title{font-size:15px;font-weight:950;color:#111}.notice-text,.biz-text{font-size:11px;color:#49566b;line-height:1.55;margin-top:4px}
 .newdot{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:#e93e48;color:#fff;font-size:9px;font-weight:900;margin-left:5px}
 .meeting-feature{background:linear-gradient(180deg,#f8fbff,#eef5ff);border:1px solid #cfe0f5;border-radius:13px;padding:16px 16px 13px;text-align:left}
 .meeting-date{font-size:24px;color:#0a3e8b;font-weight:950;text-align:center;letter-spacing:-.8px}.meeting-title{font-size:22px;text-align:center;font-weight:950;margin:7px 0 14px}
@@ -58,6 +58,68 @@ main{max-width:1500px;margin:auto;padding:20px 24px 26px}.page{display:none}.pag
 .archive-item{display:flex;justify-content:space-between;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}.archive-item a{text-decoration:none;background:var(--navy);color:#fff;padding:8px 10px;border-radius:8px;font-size:11px;font-weight:800}
 @media(max-width:1050px){.brand{height:140px}.brand h1{font-size:30px}.brand img{width:85px;height:85px}.nav{overflow:auto;justify-content:flex-start}.nav button{min-width:110px;padding:15px 16px;font-size:13px}.dashboard-grid,.lower-grid,.officers-body{grid-template-columns:1fr}.exec-grid{grid-template-columns:repeat(3,1fr)}.other-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){main{padding:12px 10px 20px}.brand{height:116px;gap:10px}.brand img{width:62px;height:62px}.brand h1{font-size:20px}.brand p{font-size:12px}.dashboard-grid{grid-template-columns:1fr}.exec-grid{grid-template-columns:repeat(2,1fr)}.quick-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* V5.1 compact officer layout */
+.officers-body{
+  grid-template-columns:1fr;
+  gap:10px;
+}
+.exec-box,.other-box{
+  width:100%;
+}
+.exec-grid{
+  grid-template-columns:repeat(5,minmax(105px,1fr));
+  gap:6px;
+}
+.exec-card{
+  min-height:112px;
+  padding:7px 4px;
+}
+.exec-icon{
+  width:32px;height:32px;font-size:16px;margin-bottom:5px;
+}
+.exec-role{font-size:11px}
+.exec-name{font-size:13px;margin-top:3px}
+.exec-meta{font-size:9px;margin-top:2px}
+.other-grid{
+  grid-template-columns:repeat(6,minmax(105px,1fr));
+  gap:6px;
+}
+.other-card{
+  min-height:102px;
+  padding:7px 4px;
+}
+.other-icon{font-size:19px;margin-top:2px}
+.other-role{font-size:11px;margin-top:5px}
+.other-name{font-size:13px;margin-top:4px}
+.other-meta{font-size:9px;margin-top:2px}
+.other-section-label{
+  grid-column:1/-1;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:12px;
+  font-weight:900;
+  color:#0b2c59;
+  padding:3px 4px 0;
+}
+.other-section-label:before{
+  content:"";
+  width:4px;height:14px;border-radius:99px;background:#d9aa45;
+}
+@media(max-width:1200px){
+  .other-grid{grid-template-columns:repeat(4,minmax(105px,1fr))}
+}
+@media(max-width:820px){
+  .exec-grid{grid-template-columns:repeat(3,1fr)}
+  .other-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:540px){
+  .exec-grid{grid-template-columns:repeat(2,1fr)}
+  .other-grid{grid-template-columns:repeat(2,1fr)}
+  .exec-card,.other-card{min-height:96px}
+}
+
 </style>
 </head>
 <body>
@@ -186,14 +248,23 @@ const practical=officers.filter(x=>practicalOrder.includes(x["남서울지방정
 const others=officers.filter(x=>otherOrder.includes(x["남서울지방정교회 임원"])).sort((a,b)=>rank(a["남서울지방정교회 임원"],otherOrder)-rank(b["남서울지방정교회 임원"],otherOrder));
 const iconMap={"회장":"●","감사":"✓","총무":"▤","서기":"✎","재무":"₩"};
 $("execGrid").innerHTML=practical.map(x=>`<div class="exec-card"><div class="exec-icon">${iconMap[x["남서울지방정교회 임원"]]||"★"}</div><div class="exec-role">${x["남서울지방정교회 임원"]}</div><div class="exec-name">${x["성명"]}</div><div class="exec-meta">${x["영문"]}</div></div>`).join("");
-function groupedCard(role,list){
- if(!list.length)return "";
- let main=list[0];
- let nameText=list.length===1?main["성명"]:`${list.length}명`;
- let meta=list.length===1?main["영문"]:"각 영문";
- return `<div class="other-card"><div class="other-icon">${role==="수석부회장"?"♛":role==="명예회장"?"♚":role==="고문"?"♟":"👥"}</div><div class="other-role">${role}</div><div class="other-name">${nameText}</div><div class="other-meta">${meta}</div></div>`;
+
+function otherCard(x){
+  const role=x["남서울지방정교회 임원"]||"";
+  const icon=role==="수석부회장"?"♛":role==="명예회장"?"♚":role==="고문"?"♟":"👥";
+  return `<div class="other-card"><div class="other-icon">${icon}</div><div class="other-role">${role}</div><div class="other-name">${x["성명"]}</div><div class="other-meta">${x["영문"]}</div></div>`;
 }
-$("otherGrid").innerHTML=otherOrder.map(r=>groupedCard(r,others.filter(x=>x["남서울지방정교회 임원"]===r))).join("");
+const otherSections=[
+  ["수석부회장", others.filter(x=>x["남서울지방정교회 임원"]==="수석부회장")],
+  ["부회장", others.filter(x=>x["남서울지방정교회 임원"]==="부회장")],
+  ["명예회장", others.filter(x=>x["남서울지방정교회 임원"]==="명예회장")],
+  ["고문", others.filter(x=>x["남서울지방정교회 임원"]==="고문")]
+];
+$("otherGrid").innerHTML=otherSections.map(([role,list])=>{
+  if(!list.length)return "";
+  return `<div class="other-section-label">${role}${list.length>1?` (${list.length}명)`:""}</div>`+list.map(otherCard).join("");
+}).join("");
+
 
 // Member table
 const regionFilter=$("regionFilter"),corpsFilter=$("corpsFilter");
