@@ -1,0 +1,20 @@
+{
+  "name": "남서울지방정교회 스마트 행정시스템",
+  "short_name": "남서울정교회",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3f7fb",
+  "theme_color": "#0f3f67",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
