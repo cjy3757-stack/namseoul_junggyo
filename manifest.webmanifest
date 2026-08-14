@@ -3,8 +3,8 @@
   "short_name": "남서울정교회",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f3f7fb",
-  "theme_color": "#0f3f67",
+  "background_color": "#f4f7fb",
+  "theme_color": "#11213a",
   "icons": [
     {
       "src": "icon-192.png",
