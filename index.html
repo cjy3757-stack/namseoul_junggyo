@@ -1,278 +1,235 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b1830"><title>남서울지방정교회 V4.4</title>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08234b">
+<title>구세군 남서울지방 정교회</title>
 <style>
-:root{--bg:#f3f6fa;--paper:#fff;--ink:#172033;--muted:#758197;--line:#e3e9f1;--nav:#0b1830;--nav2:#19375f;--wine:#8e2b3d;--gold:#c99a47;--shadow:0 18px 42px rgba(22,42,74,.08)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR","Malgun Gothic",sans-serif}.app{min-height:100vh;display:grid;grid-template-columns:252px 1fr}
-.sidebar{background:linear-gradient(180deg,var(--nav),#132b4b);color:#fff;height:100vh;position:sticky;top:0;padding:24px 18px}.brand{display:flex;align-items:center;gap:12px;padding:3px 7px 22px;border-bottom:1px solid #ffffff1c}.brand img{width:46px;height:46px;object-fit:contain;border-radius:14px;background:#fff;padding:4px}.brand b{font-size:18px}.brand small{display:block;color:#9fb0ca;margin-top:3px}
-.menu{display:grid;gap:7px;margin-top:20px}.menu button{border:0;background:transparent;color:#c8d4e4;padding:12px 13px;border-radius:13px;text-align:left;font-weight:800}.menu button.active{background:#ffffff18;color:white}.menu button:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#8191a9;margin-right:10px}.menu button.active:before{background:#e8bd62;box-shadow:0 0 0 4px #e8bd6222}
-.content{min-width:0}.topbar{height:78px;background:#ffffffdd;backdrop-filter:blur(15px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:10}.topbar h1{font-size:20px;margin:0}.topbar p{font-size:11px;color:var(--muted);margin:3px 0 0}
-.qsearch{display:flex;gap:8px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px}.qsearch input{border:0;outline:0;width:230px}.qsearch button,.btn{border:0;background:var(--nav);color:white;border-radius:10px;padding:8px 12px;font-weight:800}
-main{max-width:1400px;margin:auto;padding:28px 30px 90px}.page{display:none}.page.active{display:block}.hero{background:linear-gradient(135deg,#0c1c37,#1d4271);color:white;border-radius:28px;padding:28px 30px;box-shadow:0 24px 55px #18335b2b;margin-bottom:20px}.hero .eyebrow{color:#dfbd79;font-size:11px;font-weight:900;letter-spacing:1.5px}.hero h2{font-size:30px;margin:7px 0 8px}.hero p{color:#d3deed;margin:0;font-size:14px;line-height:1.7}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.kpi,.panel{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.kpi{padding:19px;position:relative;overflow:hidden}.kpi:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--wine),#cf6678)}.label{font-size:12px;color:var(--muted);font-weight:800}.num{font-size:34px;font-weight:950;margin-top:5px}.hint{font-size:11px;color:#9da7b5;margin-top:4px}
-.panel{padding:20px;margin-top:16px}.panel h3{margin:0 0 4px;font-size:17px}.desc{font-size:12px;color:var(--muted);margin-bottom:15px}.region-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.region-card{border:1px solid var(--line);border-radius:17px;padding:16px;background:linear-gradient(180deg,#fff,#fafbfd)}.rname{font-size:12px;color:var(--muted);font-weight:800}.rnum{font-size:27px;font-weight:950;margin-top:5px}.rmeta{font-size:11px;color:#718097;line-height:1.6;margin-top:9px;padding-top:9px;border-top:1px solid var(--line)}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.chart{display:grid;gap:9px}.barrow{display:grid;grid-template-columns:88px 1fr 38px;gap:8px;align-items:center;font-size:12px}.track{height:14px;background:#eef2f6;border-radius:999px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--wine),#cf6678);border-radius:999px}.barrow b{text-align:right}
-.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}input,select{border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px 11px;outline:0}.btn.light{background:#edf1f6;color:#26364d}.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#eef2f7;font-size:10px;font-weight:900;color:#526177}
-.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:15px}table{border-collapse:collapse;width:100%;min-width:760px;background:#fff}th,td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;font-size:12px;white-space:nowrap}th{background:#f6f8fb;color:#5c697d}
-.officer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.officer{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}.officer .role{font-size:11px;color:var(--wine);font-weight:950}.officer strong{display:block;font-size:16px;margin:4px 0}.muted{font-size:11px;color:var(--muted)}
-.timeline{display:grid;gap:10px}.event{background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);border-radius:16px;padding:14px}.month{font-size:11px;color:var(--wine);font-weight:950;margin-bottom:5px}.detail{font-size:13px;line-height:1.7}.note{font-size:11px;color:var(--muted);margin-top:6px}
-.searchbox{display:grid;grid-template-columns:1fr auto;gap:8px}.searchbox input{padding:14px;font-size:15px}.results{margin-top:15px}.result{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 13px;margin:8px 0}.result p{margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.5}.empty{text-align:center;padding:30px;color:var(--muted);border:1px dashed #cbd5e1;border-radius:16px;background:#fff}.footer{text-align:center;color:#9ba5b5;font-size:11px;margin-top:30px}.mobile-nav{display:none}
-@media(max-width:1000px){.app{grid-template-columns:1fr}.sidebar{display:none}.topbar{padding:0 16px}main{padding:18px 14px 90px}.kpis,.region-cards{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.officer-grid{grid-template-columns:repeat(2,1fr)}.qsearch{display:none}.mobile-nav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:10px;right:10px;bottom:10px;background:#0b1830f5;padding:8px;border-radius:18px;z-index:20}.mobile-nav button{border:0;background:transparent;color:#cbd5e1;font-size:10px;font-weight:800;padding:8px 2px;border-radius:10px}.mobile-nav button.active{background:#fff;color:#132847}}
-@media(max-width:620px){.officer-grid{grid-template-columns:1fr}.hero{padding:23px 20px}.hero h2{font-size:25px}.barrow{grid-template-columns:70px 1fr 32px}}
+:root{
+ --navy:#08234b;--navy2:#0d376e;--gold:#e8b547;--gold2:#f4ca68;
+ --ink:#0b1425;--muted:#586579;--line:#dfe5ec;--bg:#f4f6f9;--card:#fff;
+ --blue:#0d3d84;--shadow:0 10px 28px rgba(18,41,74,.08)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR","Malgun Gothic",sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}
+.header{background:#fff;position:relative;overflow:hidden;border-bottom:1px solid #eee}
+.header:before,.header:after{content:"";position:absolute;width:58%;height:1px;background:linear-gradient(90deg,transparent,#e7c36f,transparent);top:94px;transform:rotate(7deg);opacity:.7}
+.header:before{left:-4%}.header:after{right:-4%;transform:rotate(-7deg)}
+.brand{height:176px;display:flex;align-items:center;justify-content:center;gap:24px;position:relative;z-index:1}
+.brand img{width:108px;height:108px;object-fit:contain}
+.brand h1{font-size:40px;letter-spacing:-1.7px;margin:0;color:var(--navy);font-weight:900}
+.brand p{font-size:18px;margin:7px 0 0;text-align:center;color:#222}
+.nav{background:linear-gradient(180deg,#0a2b56,#062044);display:flex;justify-content:center;align-items:center;gap:0;box-shadow:0 6px 16px rgba(4,21,46,.18);position:sticky;top:0;z-index:30}
+.nav button{border:0;background:transparent;color:#fff;padding:17px 24px;font-weight:850;font-size:15px;min-width:128px;position:relative}
+.nav button+button{border-left:1px solid rgba(255,255,255,.12)}
+.nav button:hover{background:rgba(255,255,255,.06)}.nav button.active{color:var(--gold2)}.nav button.active:after{content:"";position:absolute;left:20px;right:20px;bottom:0;height:4px;background:var(--gold);border-radius:3px 3px 0 0}
+main{max-width:1500px;margin:auto;padding:20px 24px 26px}.page{display:none}.page.active{display:block}
+.dashboard-grid{display:grid;grid-template-columns:1.15fr .95fr 1fr;gap:12px;align-items:start}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
+.card-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.card-head h2{font-size:18px;margin:0;display:flex;align-items:center;gap:8px}.more{border:0;background:none;color:#1d2b43;font-size:12px;padding:3px 0}
+.notice-item,.biz-item{padding:11px 2px;border-bottom:1px solid var(--line)}.notice-item:last-child,.biz-item:last-child{border-bottom:0}
+.notice-row{display:grid;grid-template-columns:88px 1fr;gap:8px;align-items:start}.date{color:#123d88;font-weight:900;font-size:12px;padding-top:2px}
+.notice-title,.biz-title{font-size:15px;font-weight:900;color:#111}.notice-text,.biz-text{font-size:11px;color:#49566b;line-height:1.55;margin-top:4px}
+.newdot{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:#e93e48;color:#fff;font-size:9px;font-weight:900;margin-left:5px}
+.meeting-feature{background:linear-gradient(180deg,#f8fbff,#eef5ff);border:1px solid #cfe0f5;border-radius:13px;padding:16px 16px 13px;text-align:left}
+.meeting-date{font-size:24px;color:#0a3e8b;font-weight:950;text-align:center;letter-spacing:-.8px}.meeting-title{font-size:22px;text-align:center;font-weight:950;margin:7px 0 14px}
+.meeting-info{display:grid;grid-template-columns:70px 1fr;gap:7px;font-size:13px;margin:6px 18px}.meeting-info b{color:var(--navy)}
+.primary{display:block;width:100%;border:0;border-radius:10px;padding:14px 18px;background:linear-gradient(180deg,#124ca3,#0b3480);color:white;font-weight:900;font-size:16px;margin-top:14px}
+.lower-grid{display:grid;grid-template-columns:2.15fr 1fr;gap:12px;margin-top:12px}
+.officers-wrap{padding:0}.officers-head{padding:14px 16px 8px;display:flex;justify-content:space-between;align-items:center}.officers-head h2{font-size:18px;margin:0}
+.officers-body{display:grid;grid-template-columns:1.05fr .95fr;gap:8px;padding:0 12px 12px}
+.exec-box{background:linear-gradient(160deg,#06244d,#0d386c);border:1px solid #d9ab46;border-radius:12px;padding:7px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+.exec-title{text-align:center;color:#fff;border-bottom:1px solid rgba(232,181,71,.55);padding:3px 0 7px;font-weight:900;font-size:13px}.exec-title span{color:var(--gold)}
+.exec-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-top:7px}
+.exec-card{border:1px solid var(--gold);border-radius:10px;padding:10px 5px;text-align:center;min-height:150px;background:linear-gradient(180deg,rgba(12,48,91,.85),rgba(5,28,58,.96))}
+.exec-icon{width:40px;height:40px;border-radius:50%;margin:0 auto 8px;background:linear-gradient(180deg,#f6c45f,#dca02e);color:#07234b;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900}
+.exec-role{color:#f3c65f;font-weight:900;font-size:13px}.exec-name{color:#fff;font-weight:900;font-size:14px;margin-top:5px}.exec-meta{color:#e8eef7;font-size:10px;margin-top:4px;line-height:1.3}
+.other-box{border:1px solid var(--line);border-radius:12px;padding:7px;background:#fbfcfe}.other-title{text-align:center;font-weight:900;border-bottom:1px solid var(--line);padding:3px 0 7px}
+.other-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:7px}.other-card{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 4px;text-align:center;min-height:150px}
+.other-icon{font-size:25px;color:var(--navy);margin-top:5px}.other-role{font-size:13px;font-weight:900;margin-top:8px}.other-name{font-size:14px;font-weight:900;margin-top:6px}.other-meta{font-size:10px;color:#555;margin-top:4px}
+.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.quick-btn{border:1px solid var(--line);border-radius:11px;background:#fff;min-height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;font-weight:900;color:#111}
+.quick-btn:hover{background:#f7faff;border-color:#c9d8ec}.quick-icon{font-size:26px;color:var(--navy)}.footer{background:linear-gradient(180deg,#0a2a53,#061c3b);color:#fff;padding:18px 20px;text-align:center;font-size:12px}
+.subpage{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}.subpage h2{margin:0 0 15px;font-size:24px;color:var(--navy)}.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}input,select{border:1px solid var(--line);border-radius:9px;padding:9px 10px;outline:0;color:#111;background:#fff}.smallbtn{border:0;background:var(--navy);color:#fff;border-radius:9px;padding:9px 11px;font-weight:800}.light{background:#eef2f7;color:#111}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;font-size:12px;color:#111}th{background:#f4f7fb}
+.chart{display:grid;gap:9px}.barrow{display:grid;grid-template-columns:90px 1fr 40px;gap:8px;align-items:center;font-size:12px}.track{height:14px;background:#edf1f6;border-radius:999px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#0b3f85,#2c67b5);border-radius:999px}
+.search-result{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px;margin:8px 0}.search-result strong{font-size:13px}.search-result p{font-size:11px;color:#555;margin:4px 0 0}
+.archive-item{display:flex;justify-content:space-between;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}.archive-item a{text-decoration:none;background:var(--navy);color:#fff;padding:8px 10px;border-radius:8px;font-size:11px;font-weight:800}
+@media(max-width:1050px){.brand{height:140px}.brand h1{font-size:30px}.brand img{width:85px;height:85px}.nav{overflow:auto;justify-content:flex-start}.nav button{min-width:110px;padding:15px 16px;font-size:13px}.dashboard-grid,.lower-grid,.officers-body{grid-template-columns:1fr}.exec-grid{grid-template-columns:repeat(3,1fr)}.other-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){main{padding:12px 10px 20px}.brand{height:116px;gap:10px}.brand img{width:62px;height:62px}.brand h1{font-size:20px}.brand p{font-size:12px}.dashboard-grid{grid-template-columns:1fr}.exec-grid{grid-template-columns:repeat(2,1fr)}.quick-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="brand">
+    <img src="logo.png" alt="구세군 면류관">
+    <div><h1>구세군 남서울지방 정교회</h1><p>하나님을 사랑하고 이웃을 섬기는 정교회</p></div>
+  </div>
+</header>
 
-/* V4.4 layout overrides */
-.app{display:block}
-.sidebar{display:none!important}
-.content{min-width:0}
-.topbar{
-  height:auto;
-  min-height:132px;
-  padding:18px 24px 16px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:14px;
-  background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(249,251,254,.96));
-  backdrop-filter:blur(18px);
-}
-.topbar>div:first-child{text-align:center}
-.topbar h1{font-size:28px;letter-spacing:-.9px}
-.topbar p{font-size:12px}
-.qsearch{display:none!important}
-.desktop-top-menu{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:8px;
-  width:100%;
-  max-width:980px;
-}
-.desktop-top-menu button{
-  border:1px solid var(--line);
-  background:#fff;
-  color:#425069;
-  padding:10px 16px;
-  border-radius:999px;
-  font-weight:850;
-  box-shadow:0 6px 18px rgba(25,42,70,.04);
-}
-.desktop-top-menu button:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(25,42,70,.08)}
-.desktop-top-menu button.active{
-  color:#fff;
-  border-color:transparent;
-  background:linear-gradient(135deg,var(--nav),#224b7d);
-  box-shadow:0 10px 24px rgba(11,24,48,.20);
-}
-main{padding-top:24px}
-.home-officers{margin-top:16px}
-.home-officers .officer-grid{margin-top:14px}
-.recent-business-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.recent-business-card{
-  border:1px solid var(--line);border-radius:16px;padding:14px;background:linear-gradient(180deg,#fff,#fafbfd)
-}
-.recent-business-card .month{margin-bottom:6px}
-@media(max-width:1000px){
-  .topbar{min-height:122px;padding:14px 12px 12px}
-  .topbar h1{font-size:23px}
-  main{padding:16px 12px 95px}
-  .desktop-top-menu{gap:6px}
-  .desktop-top-menu button{padding:9px 12px;font-size:12px}
-  .mobile-nav{display:none!important}
-  .recent-business-grid{grid-template-columns:1fr}
-}
+<nav class="nav">
+<button class="active" data-page="home">⌂ 홈</button>
+<button data-page="notices">● 공지사항</button>
+<button data-page="search">⌕ 통합검색</button>
+<button data-page="members">👥 회원관리</button>
+<button data-page="stats">▥ 지역통계</button>
+<button data-page="business">▣ 사업내역</button>
+<button data-page="meetings">▤ 월례회자료</button>
+<button data-page="orgs">▦ 시설·본영</button>
+</nav>
 
-
-/* V4.4 readability overrides */
-body{color:#101827}
-.hero p{color:#ffffff}
-.label,.hint,.desc,.muted,.rname,.rmeta,.note,.topbar p,.footer{color:#111827!important}
-.panel,.kpi,.region-card,.officer,.event,.result,td,th{color:#111827}
-th{color:#111827;background:#eef2f6}
-.brand small{color:#d9e2ef}
-.menu button{color:#eef3f9}
-.badge{color:#111827}
-input,select{color:#111827}
-.result p{color:#111827!important}
-
-
-/* V4.4 monthly meeting archive */
-.meeting-summary{
-  display:grid;grid-template-columns:1.3fr .7fr;gap:14px;align-items:stretch
-}
-.meeting-card{
-  background:linear-gradient(135deg,#fff,#f8fafc);
-  border:1px solid var(--line);border-radius:18px;padding:18px;
-}
-.meeting-card h4{margin:0 0 8px;font-size:16px;color:#111827}
-.meeting-meta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
-.meeting-meta span{display:inline-block;padding:5px 9px;border-radius:999px;background:#eef2f7;color:#111827;font-size:11px;font-weight:800}
-.meeting-actions{display:flex;gap:8px;flex-wrap:wrap}
-.meeting-actions a{
-  text-decoration:none;display:inline-flex;align-items:center;justify-content:center;
-  background:var(--nav);color:#fff;border-radius:11px;padding:10px 13px;font-size:12px;font-weight:850
-}
-.meeting-actions a.light{background:#eef2f7;color:#111827;border:1px solid var(--line)}
-.archive-list{display:grid;gap:12px}
-.archive-item{
-  background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px;
-  display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center
-}
-.archive-item h4{margin:0 0 5px;color:#111827}.archive-item p{margin:0;color:#111827;font-size:12px;line-height:1.6}
-.archive-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.archive-actions a{text-decoration:none;background:var(--nav);color:white;padding:9px 12px;border-radius:10px;font-size:12px;font-weight:850}
-.archive-actions a.light{background:#eef2f7;color:#111827}
-@media(max-width:720px){
-  .meeting-summary{grid-template-columns:1fr}
-  .archive-item{grid-template-columns:1fr}
-  .archive-actions{justify-content:flex-start}
-}
-
-
-/* V4.4 notices */
-.notice-list{display:grid;gap:11px}
-.notice-card{
-  background:#fff;border:1px solid var(--line);border-radius:17px;padding:16px;
-  box-shadow:0 8px 24px rgba(22,42,74,.05)
-}
-.notice-card .notice-date{font-size:11px;color:#8e2b3d;font-weight:900;margin-bottom:5px}
-.notice-card h4{margin:0 0 7px;font-size:15px;color:#111827}
-.notice-card p{margin:0;color:#111827;font-size:12px;line-height:1.7}
-.notice-card .notice-actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
-.notice-card .notice-actions a,.notice-card .notice-actions button{
-  text-decoration:none;border:0;background:var(--nav);color:#fff;border-radius:10px;
-  padding:8px 11px;font-size:11px;font-weight:850
-}
-.notice-card .notice-actions .light{background:#eef2f7;color:#111827;border:1px solid var(--line)}
-.notice-preview{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
-.notice-preview .notice-card{height:100%}
-@media(max-width:800px){.notice-preview{grid-template-columns:1fr}}
-
-</style></head><body>
-<div class="app"><aside class="sidebar"><div class="brand"><img src="logo.png" onerror="this.style.display='none'"><div><b>남서울지방정교회</b><small>2026년 7월 · V4.4</small></div></div>
-<div class="menu"><button class="active" data-page="home">홈</button><button data-page="notices">공지사항</button><button data-page="search">통합검색</button><button data-page="members">회원관리</button><button data-page="stats">지역통계</button><button data-page="business">사업내역</button><button data-page="meetings">월례회 자료</button><button data-page="orgs">시설·본영</button></div></aside>
-<div class="content"><header class="topbar"><div><h1 id="pageTitle">홈</h1><p>회원명단 기준 2026년 7월</p></div>
-<div class="desktop-top-menu">
-  <button class="active" data-page="home">홈</button><button data-page="notices">공지사항</button>
-  <button data-page="search">통합검색</button>
-  <button data-page="members">회원관리</button>
-  <button data-page="stats">지역통계</button>
-  <button data-page="business">사업내역</button>
-  <button data-page="meetings">월례회 자료</button><button data-page="orgs">시설·본영</button>
-</div>
-<div class="qsearch"><input id="quickSearch" placeholder="통합검색"><button id="quickSearchBtn">검색</button></div></header>
 <main>
-<section id="home" class="page active"><div class="hero"><div class="eyebrow">NAMSEOUL DISTRICT</div><h2>남서울지방정교회</h2><p>남서울지방 정교회원과 영문·지역·임원 현황을 간결하게 확인할 수 있는 통합 행정 대시보드입니다.</p></div>
-<div class="kpis"><div class="kpi"><div class="label">총 회원</div><div class="num" id="kMembers">-</div><div class="hint">성명 등록 기준</div></div><div class="kpi"><div class="label">소속 영문</div><div class="num" id="kCorps">-</div><div class="hint">회원이 등록된 영문</div></div><div class="kpi"><div class="label">지역</div><div class="num" id="kRegions">-</div><div class="hint">중부 · 강남 · 경기 · 인천</div></div><div class="kpi"><div class="label">임원현황</div><div class="num" id="kOfficers">-</div><div class="hint">임원 직책 등록 기준</div></div></div>
-<div class="panel"><h3>지역 요약</h3><div class="desc">지역별 회원 수, 영문 수와 소속 영문을 한눈에 보여드립니다.</div><div class="region-cards" id="homeRegionCards"></div></div>
-<div class="panel home-officers"><h3>임원현황</h3><div class="desc">실무임원과 기타 임원을 구분하여 표시합니다.</div>
-<div style="margin-top:14px"><h4 style="margin:0 0 10px;font-size:14px">실무임원</h4><div id="executiveOfficerList" class="officer-grid"></div></div>
-<div style="margin-top:18px"><h4 style="margin:0 0 10px;font-size:14px">기타 임원</h4><div id="otherOfficerList" class="officer-grid"></div></div>
-</div>
-<div class="panel">
-<h3>최근 공지사항</h3>
-<div class="desc">최근 등록된 공지사항을 빠르게 확인합니다.</div>
-<div id="homeNoticeList" class="notice-preview"></div>
-<div style="margin-top:12px"><button class="btn light" type="button" onclick="document.querySelector('[data-page=&quot;notices&quot;]').click()">공지사항 전체보기</button></div>
-</div>
-<div class="panel">
-<h3>최근 월례회</h3>
-<div class="desc">가장 최근 등록된 월례회의 순서지와 소식지를 빠르게 확인합니다.</div>
-<div class="meeting-summary">
-  <div class="meeting-card">
-    <h4>2026년 6월 정기월례회</h4>
-    <div class="meeting-meta"><span>2026.06.21</span><span>수원영문</span><span>8개 영문 · 33명 참석</span></div>
-    <div class="meeting-actions">
-      <a href="2026-06_monthly_order.pdf" target="_blank" rel="noopener">월례회 순서지 보기</a>
-      <a href="2026-06_newsletter.pdf" target="_blank" rel="noopener" class="light">6월 소식지 보기</a>
-      <button class="btn light" type="button" onclick="document.querySelector('[data-page=&quot;meetings&quot;]').click()">월례회 자료 전체보기</button>
+<section id="home" class="page active">
+  <div class="dashboard-grid">
+    <div class="card">
+      <div class="card-head"><h2>🔔 최근 공지사항</h2><button class="more" onclick="showPage('notices')">더보기 ›</button></div>
+      <div id="homeNotices"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h2>▣ 최근 월례회</h2><button class="more" onclick="showPage('meetings')">더보기 ›</button></div>
+      <div class="meeting-feature">
+        <div class="meeting-date">2026.06.21 <span style="font-size:13px;color:#111">(주) 오후 4시 30분</span></div>
+        <div class="meeting-title">6월 정기월례회 (수원영문)</div>
+        <div class="meeting-info"><b>참석</b><span>8개 영문 33명</span></div>
+        <div class="meeting-info"><b>장소</b><span>수원영문</span></div>
+        <div class="meeting-info"><b>자료</b><span>순서지 / 소식지</span></div>
+        <button class="primary" onclick="showPage('meetings')">월례회 자료 보기 〉</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h2>▣ 최근 사업</h2><button class="more" onclick="showPage('business')">더보기 ›</button></div>
+      <div id="homeBusiness"></div>
     </div>
   </div>
-  <div class="meeting-card">
-    <h4>주요 내용</h4>
-    <p style="margin:0;color:#111827;font-size:12px;line-height:1.8">
-      예배와 말씀 · 재정보고 · 사업보고 · 체육대회 · 여름성회 · 차기 임원선출 · 영문별 소식
-    </p>
-  </div>
-</div>
-</div>
-<div class="panel"><h3>최근 사업</h3><div class="desc">최근 등록된 사업내역 3건을 요약해서 보여드립니다.</div><div id="recentBusiness" class="recent-business-grid"></div></div>
-</section>
 
-<section id="notices" class="page">
-<div class="hero"><div class="eyebrow">NOTICE BOARD</div><h2>공지사항</h2><p>남서울지방정교회의 주요 일정과 안내사항을 확인합니다.</p></div>
-<div class="panel">
-  <h3>공지사항</h3>
-  <div class="desc">등록된 공지사항을 최신순으로 보여드립니다.</div>
-  <div id="noticeList" class="notice-list"></div>
-</div>
-</section>
-<section id="search" class="page"><div class="hero"><div class="eyebrow">UNIFIED SEARCH</div><h2>통합검색</h2><p>회원, 임원, 사업내역, 시설·본영을 한 번에 검색합니다.</p></div><div class="panel"><div class="searchbox"><input id="globalSearch" placeholder="이름, 영문, 직분, 임원직책, 사업내용, 시설명 검색"><button class="btn" id="globalSearchBtn">검색</button></div><div id="searchResults" class="results"><div class="empty">검색어를 입력하세요.</div></div></div></section>
-
-<section id="members" class="page"><div class="hero"><div class="eyebrow">MEMBER DIRECTORY</div><h2>회원관리</h2><p>지역·영문 필터와 검색을 이용해 회원 정보를 빠르게 조회합니다.</p></div><div class="panel"><div class="tools"><input id="memberSearch" placeholder="회원 검색"><select id="regionFilter"><option value="">전체 지역</option></select><select id="corpsFilter"><option value="">전체 영문</option></select><button class="btn light" id="showPhones">연락처 보기</button><span id="memberCount" class="badge"></span></div><div class="table-wrap"><table><thead><tr><th>번호</th><th>지역</th><th>영문</th><th>직분</th><th>성명</th><th>연락처</th><th>임원현황</th></tr></thead><tbody id="memberRows"></tbody></table></div></div></section>
-
-<section id="stats" class="page"><div class="hero"><div class="eyebrow">REGIONAL ANALYTICS</div><h2>지역통계</h2><p>홈에서 분리한 모든 그래프와 상세 통계를 이 메뉴에서 집중적으로 확인합니다.</p></div><div class="two"><div class="panel"><h3>지역별 회원 현황</h3><div class="desc">지역별 회원 수</div><div class="chart" id="regionChart"></div></div><div class="panel"><h3>직분별 회원 현황</h3><div class="desc">회원 직분 분포</div><div class="chart" id="roleChart"></div></div></div><div class="panel"><h3>영문별 회원 현황</h3><div class="desc">회원 수 기준 내림차순</div><div class="chart" id="corpsChart"></div></div><div class="panel"><h3>지역별 상세</h3><div class="table-wrap"><table><thead><tr><th>지역</th><th>영문 수</th><th>회원 수</th><th>소속 영문</th></tr></thead><tbody id="regionSummary"></tbody></table></div></div><div class="panel"><h3>영문별 상세</h3><div class="table-wrap"><table><thead><tr><th>순위</th><th>영문</th><th>지역</th><th>회원</th><th>담임사관</th><th>목양사관</th></tr></thead><tbody id="corpsTable"></tbody></table></div></div></section>
-
-
-<section id="business" class="page"><div class="hero"><div class="eyebrow">ACTIVITY LOG</div><h2>사업내역</h2><p>2025년 10월 이후 주요 사업을 월별로 확인합니다.</p></div><div id="businessList" class="timeline"></div></section>
-<section id="meetings" class="page">
-<div class="hero"><div class="eyebrow">MONTHLY MEETING ARCHIVE</div><h2>월례회 자료</h2><p>남서울지방정교회 정기월례회 순서지와 소식지를 월별로 보관하고 열람합니다.</p></div>
-<div class="panel">
-  <h3>월례회 아카이브</h3>
-  <div class="desc">PC와 휴대폰에서 PDF 원본을 새 화면으로 열어볼 수 있습니다.</div>
-  <div class="archive-list">
-    <div class="archive-item">
-      <div>
-        <h4>2026년 6월 정기월례회</h4>
-        <p>2026년 6월 21일(주일) 오후 4시 30분 · 수원영문<br>예배, 월례회 안건, 재정보고, 사업보고, 영문별 소식과 사진을 포함합니다.</p>
+  <div class="lower-grid">
+    <div class="card officers-wrap">
+      <div class="officers-head"><h2>👥 임원현황</h2></div>
+      <div class="officers-body">
+        <div class="exec-box">
+          <div class="exec-title"><span>★</span> 실무임원 (집행부)</div>
+          <div class="exec-grid" id="execGrid"></div>
+        </div>
+        <div class="other-box">
+          <div class="other-title">기타 임원</div>
+          <div class="other-grid" id="otherGrid"></div>
+        </div>
       </div>
-      <div class="archive-actions">
-        <a href="2026-06_monthly_order.pdf" target="_blank" rel="noopener">순서지 보기</a>
-        <a href="2026-06_newsletter.pdf" target="_blank" rel="noopener" class="light">소식지 보기</a>
+    </div>
+    <div class="card">
+      <div class="card-head"><h2>🔗 바로가기</h2></div>
+      <div class="quick-grid">
+        <button class="quick-btn" onclick="showPage('members')"><div class="quick-icon">👥</div>회원명부</button>
+        <button class="quick-btn" onclick="showPage('stats')"><div class="quick-icon">⛪</div>영문현황</button>
+        <button class="quick-btn" onclick="showPage('business')"><div class="quick-icon">▣</div>사업보고</button>
+        <button class="quick-btn" onclick="showPage('meetings')"><div class="quick-icon">₩</div>재정보고</button>
+        <button class="quick-btn" onclick="showPage('notices')"><div class="quick-icon">♢</div>공지사항</button>
+        <button class="quick-btn" onclick="showPage('meetings')"><div class="quick-icon">▤</div>월례회자료</button>
       </div>
     </div>
   </div>
-</div>
 </section>
-<section id="orgs" class="page"><div class="hero"><div class="eyebrow">ORGANIZATIONS</div><h2>시설·본영</h2><p>별도로 등록된 영문, 사회복지시설 및 지방본영 정보입니다.</p></div><div class="panel"><div class="table-wrap"><table><thead><tr><th>구분</th><th>기관/영문</th><th>담당/담임</th><th>목양/보조</th><th>연락처</th></tr></thead><tbody id="orgRows"></tbody></table></div></div></section>
-<div class="footer">남서울지방정교회 · V4.4 · 2026년 7월</div></main></div></div>
-<script>window.NOTICES=[{"date": "2026-08-12", "title": "남서울지방 여름성회 안내", "body": "남서울지방 여름성회가 2026년 8월 12일부터 14일까지 서울지방 과천영문에서 개최될 예정입니다. 정교회에서는 주차안내와 특송 등 봉사사역에 참여합니다.", "attachment": ""}, {"date": "2026-10", "title": "차기 임원선출 예정 안내", "body": "차기 임원선출은 2026년 10월에 실시될 예정입니다.", "attachment": ""}, {"date": "2026-06-21", "title": "6월 정기월례회 자료 등록", "body": "2026년 6월 21일 수원영문에서 진행된 정기월례회의 순서지와 소식지를 월례회 자료 메뉴에 등록했습니다.", "attachment": "2026-06_newsletter.pdf"}];window.APP_DATA={"meta": {"version": "V4.4", "asOf": "2026년 7월"}, "members": [{"번호": "1", "지역": "중부", "영문": "강남", "직분": "서기", "성명": "신동수", "연락처": "010-9927-3077", "남서울지방정교회 임원": "", "담임사관": "참령 안근정", "목양사관": "참령 김은애"}, {"번호": "2", "지역": "중부", "영문": "강남", "직분": "자산", "성명": "정구종", "연락처": "010-5251-1653", "남서울지방정교회 임원": "", "담임사관": "참령 안근정", "목양사관": "참령 김은애"}, {"번호": "3", "지역": "강남", "영문": "관악", "직분": "선교", "성명": "김장호", "연락처": "010-9493-0848", "남서울지방정교회 임원": "", "담임사관": "참령 이용운", "목양사관": "참령 김은주"}, {"번호": "4", "지역": "강남", "영문": "군포은혜", "직분": "선교", "성명": "김종찬", "연락처": "010-3688-6225", "남서울지방정교회 임원": "", "담임사관": "정위 윤현충", "목양사관": "정위 김선화"}, {"번호": "5", "지역": "강남", "영문": "군포은혜", "직분": "서기", "성명": "최재용", "연락처": "010-3185-0521", "남서울지방정교회 임원": "총무", "담임사관": "정위 윤현충", "목양사관": "정위 김선화"}, {"번호": "6", "지역": "강남", "영문": "군포은혜", "직분": "원로", "성명": "김윤수", "연락처": "010-6344-3656", "남서울지방정교회 임원": "", "담임사관": "정위 윤현충", "목양사관": "정위 김선화"}, {"번호": "7", "지역": "강남", "영문": "군포은혜", "직분": "원로", "성명": "방기호", "연락처": "010-8733-3112", "남서울지방정교회 임원": "", "담임사관": "정위 윤현충", "목양사관": "정위 김선화"}, {"번호": "8", "지역": "강남", "영문": "군포은혜", "직분": "원로", "성명": "정진규", "연락처": "010-2394-1865", "남서울지방정교회 임원": "감사", "담임사관": "정위 윤현충", "목양사관": "정위 김선화"}, {"번호": "9", "지역": "중부", "영문": "남서울", "직분": "선교", "성명": "김수균", "연락처": "010-8791-8866", "남서울지방정교회 임원": "", "담임사관": "참령 이재성", "목양사관": "참령 이은경"}, {"번호": "10", "지역": "중부", "영문": "남서울", "직분": "서기", "성명": "홍왕표", "연락처": "010-5217-9855", "남서울지방정교회 임원": "", "담임사관": "참령 이재성", "목양사관": "참령 이은경"}, {"번호": "11", "지역": "중부", "영문": "남서울", "직분": "재무", "성명": "권영남", "연락처": "010-8943-1504", "남서울지방정교회 임원": "", "담임사관": "참령 이재성", "목양사관": "참령 이은경"}, {"번호": "12", "지역": "중부", "영문": "남서울", "직분": "원로", "성명": "서판용", "연락처": "010-8717-6455", "남서울지방정교회 임원": "", "담임사관": "참령 이재성", "목양사관": "참령 이은경"}, {"번호": "13", "지역": "인천", "영문": "만수", "직분": "선교", "성명": "서민석", "연락처": "010-7343-0733", "남서울지방정교회 임원": "", "담임사관": "참령 박종서", "목양사관": "참령 김영순"}, {"번호": "14", "지역": "강남", "영문": "부천", "직분": "선교", "성명": "정철영", "연락처": "010-9460-8331", "남서울지방정교회 임원": "고문", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "15", "지역": "강남", "영문": "부천", "직분": "서기", "성명": "곽종구", "연락처": "010-3232-7921", "남서울지방정교회 임원": "서기", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "16", "지역": "강남", "영문": "부천", "직분": "재무", "성명": "송웅섭", "연락처": "010-3760-9830", "남서울지방정교회 임원": "", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "17", "지역": "강남", "영문": "부천", "직분": "청년", "성명": "고성규", "연락처": "010-2207-6150", "남서울지방정교회 임원": "", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "18", "지역": "강남", "영문": "부천", "직분": "원로", "성명": "이만희", "연락처": "010-6770-6684", "남서울지방정교회 임원": "", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "19", "지역": "강남", "영문": "부천", "직분": "원로", "성명": "문공주", "연락처": "010-5334-3117", "남서울지방정교회 임원": "", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "20", "지역": "인천", "영문": "부평", "직분": "서기", "성명": "천정수", "연락처": "010-3333-5704", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "21", "지역": "인천", "영문": "부평", "직분": "교육", "성명": "김성호", "연락처": "010-9593-5032", "남서울지방정교회 임원": "수석부회장", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "22", "지역": "인천", "영문": "부평", "직분": "자산", "성명": "김재국", "연락처": "010-9391-5722", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "23", "지역": "인천", "영문": "부평", "직분": "청년", "성명": "최용호", "연락처": "010-6329-6526", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "24", "지역": "인천", "영문": "부평", "직분": "협동", "성명": "이순애", "연락처": "010-2777-3232", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "25", "지역": "인천", "영문": "부평", "직분": "원로", "성명": "한영식", "연락처": "010-6341-3230", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "26", "지역": "인천", "영문": "부평", "직분": "원로", "성명": "최광선", "연락처": "010-7337-6526", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "27", "지역": "인천", "영문": "부평", "직분": "원로", "성명": "이명자", "연락처": "010-8279-7070", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "28", "지역": "인천", "영문": "부평", "직분": "원로", "성명": "최승천", "연락처": "010-7130-7251", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "29", "지역": "인천", "영문": "송림", "직분": "선교", "성명": "정용실", "연락처": "010-5328-3728", "남서울지방정교회 임원": "고문", "담임사관": "참령 임효민", "목양사관": "참령 김민정"}, {"번호": "30", "지역": "인천", "영문": "송림", "직분": "서기", "성명": "김영호", "연락처": "010-4726-6208", "남서울지방정교회 임원": "감사", "담임사관": "참령 임효민", "목양사관": "참령 김민정"}, {"번호": "31", "지역": "인천", "영문": "송림", "직분": "재무", "성명": "이정관", "연락처": "010-5273-0697", "남서울지방정교회 임원": "", "담임사관": "참령 임효민", "목양사관": "참령 김민정"}, {"번호": "32", "지역": "인천", "영문": "송림", "직분": "원로", "성명": "정영자", "연락처": "010-5147-9880", "남서울지방정교회 임원": "", "담임사관": "참령 임효민", "목양사관": "참령 김민정"}, {"번호": "33", "지역": "인천", "영문": "송림", "직분": "원로", "성명": "김재규", "연락처": "010-2227-6649", "남서울지방정교회 임원": "", "담임사관": "참령 임효민", "목양사관": "참령 김민정"}, {"번호": "34", "지역": "경기", "영문": "송탄", "직분": "선교", "성명": "서종근", "연락처": "010-9101-5779", "남서울지방정교회 임원": "", "담임사관": "참령 유계준", "목양사관": "참령 김한정"}, {"번호": "35", "지역": "경기", "영문": "송탄", "직분": "서기", "성명": "최종기", "연락처": "010-3362-1681", "남서울지방정교회 임원": "", "담임사관": "참령 유계준", "목양사관": "참령 김한정"}, {"번호": "36", "지역": "경기", "영문": "송탄", "직분": "원로", "성명": "박용세", "연락처": "010-8621-7147", "남서울지방정교회 임원": "", "담임사관": "참령 유계준", "목양사관": "참령 김한정"}, {"번호": "37", "지역": "중부", "영문": "수원", "직분": "선교", "성명": "유현구", "연락처": "010-4145-4470", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "38", "지역": "중부", "영문": "수원", "직분": "서기", "성명": "최상욱", "연락처": "010-5214-8423", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "39", "지역": "중부", "영문": "수원", "직분": "자산", "성명": "김종호", "연락처": "010-3181-2363", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "40", "지역": "중부", "영문": "수원", "직분": "청년", "성명": "신훈영", "연락처": "010-4041-0051", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "41", "지역": "중부", "영문": "수원", "직분": "원로", "성명": "최경락", "연락처": "010-5377-5053", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "42", "지역": "중부", "영문": "수원", "직분": "원로", "성명": "최태석", "연락처": "010-6349-7867", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "43", "지역": "경기", "영문": "안성", "직분": "선교", "성명": "박상기", "연락처": "010-8785-3859", "남서울지방정교회 임원": "고문", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "44", "지역": "경기", "영문": "안성", "직분": "서기", "성명": "서정식", "연락처": "010-6740-4704", "남서울지방정교회 임원": "", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "45", "지역": "경기", "영문": "안성", "직분": "재무", "성명": "허오욱", "연락처": "010-6306-3961", "남서울지방정교회 임원": "부회장", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "46", "지역": "경기", "영문": "안성", "직분": "자산", "성명": "배인환", "연락처": "010-9350-8572", "남서울지방정교회 임원": "", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "47", "지역": "경기", "영문": "안성", "직분": "청년", "성명": "김은주", "연락처": "010-7115-9586", "남서울지방정교회 임원": "", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "48", "지역": "경기", "영문": "안성", "직분": "원로", "성명": "윤용민", "연락처": "010-3376-3179", "남서울지방정교회 임원": "", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "49", "지역": "경기", "영문": "안성", "직분": "원로", "성명": "윤종홍", "연락처": "010-9536-3396", "남서울지방정교회 임원": "", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "50", "지역": "중부", "영문": "안양", "직분": "서기", "성명": "주  혁", "연락처": "010-2393-2451", "남서울지방정교회 임원": "부회장", "담임사관": "참령 김성순", "목양사관": "참령 김양희"}, {"번호": "51", "지역": "중부", "영문": "안양", "직분": "재무", "성명": "김상규", "연락처": "010-2386-1990", "남서울지방정교회 임원": "", "담임사관": "참령 김성순", "목양사관": "참령 김양희"}, {"번호": "52", "지역": "중부", "영문": "안양", "직분": "원로", "성명": "고용운", "연락처": "010-5343-9779", "남서울지방정교회 임원": "", "담임사관": "참령 김성순", "목양사관": "참령 김양희"}, {"번호": "53", "지역": "강남", "영문": "연합", "직분": "재무", "성명": "강근식", "연락처": "010-9111-1913", "남서울지방정교회 임원": "", "담임사관": "정위 이상근", "목양사관": "정위 이한나"}, {"번호": "54", "지역": "강남", "영문": "영등포", "직분": "선교", "성명": "장요식", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "55", "지역": "강남", "영문": "영등포", "직분": "서기", "성명": "이상현", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "56", "지역": "강남", "영문": "영등포", "직분": "교육", "성명": "김찬현", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "57", "지역": "강남", "영문": "영등포", "직분": "재무", "성명": "김경란", "연락처": "010-9170-3080", "남서울지방정교회 임원": "재무", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "58", "지역": "강남", "영문": "영등포", "직분": "청년", "성명": "강수형", "연락처": "010-7724-6251", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "59", "지역": "강남", "영문": "영등포", "직분": "사회복지", "성명": "노숙희", "연락처": "010-3221-2062", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "60", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "김철석", "연락처": "010-5253-8156", "남서울지방정교회 임원": "명예회장", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "61", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "이병하", "연락처": "010-9022-2571", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "62", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "전종면", "연락처": "010-2170-8254", "남서울지방정교회 임원": "부회장", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "63", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "강  옥", "연락처": "010-2387-6635", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "64", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "임세영", "연락처": "010-2081-9171", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "65", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "이상국", "연락처": "010-2702-0091", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "66", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "권승남", "연락처": "010-4258-4764", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "67", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "김기두", "연락처": "010-2602-2928", "남서울지방정교회 임원": "고문", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "68", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "최병윤", "연락처": "010-5361-5991", "남서울지방정교회 임원": "고문", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "69", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "윤경용", "연락처": "010-6323-2147", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "70", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "윤병기", "연락처": "010-2245-7963", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "71", "지역": "경기", "영문": "이천", "직분": "서기", "성명": "신종만", "연락처": "010-4517-2975", "남서울지방정교회 임원": "", "담임사관": "참령 정택영", "목양사관": "참령 박혜수"}, {"번호": "72", "지역": "경기", "영문": "이천", "직분": "재무", "성명": "김은수", "연락처": "010-6506-5870", "남서울지방정교회 임원": "", "담임사관": "참령 정택영", "목양사관": "참령 박혜수"}, {"번호": "73", "지역": "경기", "영문": "이천", "직분": "원로", "성명": "박기우", "연락처": "010-4242-7262", "남서울지방정교회 임원": "", "담임사관": "참령 정택영", "목양사관": "참령 박혜수"}, {"번호": "74", "지역": "인천", "영문": "인천", "직분": "선교", "성명": "이순애", "연락처": "010-2838-8357", "남서울지방정교회 임원": "회장", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "75", "지역": "인천", "영문": "인천", "직분": "서기", "성명": "전두수", "연락처": "010-4305-6276", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "76", "지역": "인천", "영문": "인천", "직분": "복지", "성명": "김인곤", "연락처": "010-9489-2877", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "77", "지역": "인천", "영문": "인천", "직분": "교육", "성명": "최병우", "연락처": "010-6270-5211", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "78", "지역": "인천", "영문": "인천", "직분": "자산", "성명": "안병은", "연락처": "010-9047-3815", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "79", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "손철헌", "연락처": "010-6320-6475", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "80", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "홍순모", "연락처": "010-2428-2320", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "81", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "배형선", "연락처": "010-9193-0515", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "82", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "이경숙", "연락처": "010-6728-4342", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "83", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "김수일", "연락처": "010-5332-2031", "남서울지방정교회 임원": "고문", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "84", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "권병돈", "연락처": "010-3877-5448", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "85", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "이명섭", "연락처": "010-5331-3362", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "86", "지역": "인천", "영문": "인평", "직분": "선교", "성명": "손현식", "연락처": "010-5340-7061", "남서울지방정교회 임원": "", "담임사관": "정위 정일해", "목양사관": "정위 윤효정"}, {"번호": "87", "지역": "경기", "영문": "오산", "직분": "선교", "성명": "강인구", "연락처": "010-8336-1156", "남서울지방정교회 임원": "", "담임사관": "정위 정상혁", "목양사관": "정위 전혜원"}, {"번호": "88", "지역": "경기", "영문": "평택", "직분": "선교", "성명": "이기창", "연락처": "010-6788-8159", "남서울지방정교회 임원": "", "담임사관": "참령 김필용", "목양사관": "참령 윤희정"}, {"번호": "89", "지역": "경기", "영문": "평택", "직분": "서기", "성명": "강이임", "연락처": "010-8331-6296", "남서울지방정교회 임원": "", "담임사관": "참령 김필용", "목양사관": "참령 윤희정"}], "organizations": [{"번호": "90", "지역": "중부", "영문": "안산", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 김진태", "목양사관": "참령 정강숙"}, {"번호": "91", "지역": "중부", "영문": "밀알", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 김기태", "목양사관": "-"}, {"번호": "92", "지역": "인천", "영문": "평강", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 정홍례", "목양사관": "-"}, {"번호": "93", "지역": "인천", "영문": "미추홀", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "부위 구현모", "목양사관": "부위 김수경"}, {"번호": "94", "지역": "경기", "영문": "남안성", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "정위 현은숙", "목양사관": "-"}, {"번호": "95", "지역": "경기", "영문": "북안성", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 이종우", "목양사관": "참령 김회경"}, {"번호": "96", "지역": "사회복지시설", "영문": "합정노인복지세터", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "센터장 참령 김필용", "목양사관": "-"}, {"번호": "97", "지역": "사회복지시설", "영문": "샛별어린이집", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "대표 정위 전혜원", "목양사관": "-"}, {"번호": "98", "지역": "사회복지시설", "영문": "와동지역어린이센터", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "센터장 참령 정강숙", "목양사관": "-"}, {"번호": "99", "지역": "사회복지시설", "영문": "평택재가복지센터", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "센터장 참령 변진옥", "목양사관": "-"}, {"번호": "100", "지역": "지방본영", "영문": "지방본영", "직분": "", "성명": "", "연락처": "031-236-7811", "남서울지방정교회 임원": "", "담임사관": "지방장관 부정령 조진호", "목양사관": "지방여성사역서기관 부정령 김주연"}], "business": [{"month": "'25.10월", "detail": "○ 영등포영문 이병하 정교 장모 소천 (10/11)", "note": "근조화 전달"}, {"month": "'25.10월", "detail": "○ 인천영문 신임정교 및 원로정교 임명 (10/26)\n     - 원로정교 : 전두수\n     - 신임정교 : 최광복", "note": "축하화분 전달"}, {"month": "11월", "detail": "○ 정교회 정기월례회 (11/9, 영등포영문), 8개 영문/27명 참석\n     - 예배설교 : 영등포영문 김병선 담임사관\n     - 월례회의 : '26년 사관,정교 신년하례회 시행건 토의", "note": "참석인원 : 8개 영문 22명\n식사 : 영등포영문 가정단"}, {"month": "12월", "detail": "○ 남서울지방 자선냄비 봉사자 헌신예배 참석 (12/7)\n     - 장소 : 영등포영문", "note": "각 영문별 자선냄비 봉사"}, {"month": "'26.1월", "detail": "○ 신년축복성회 참석 (1/1~3)\n     - 장소 : 백화산수련원", "note": ""}, {"month": "'26.1월", "detail": "○ 남서울지방 신앙전진대회 (1/18, 영등포영문)\n ○ 임원 임시회의 (1/18, 영등포 영문 14:30~15:10)\n     - 참석자 : 이순애 회장 등 7명\n     - 안건 : '26년 사관.정교 신년하례회 시행안건 토의", "note": "태국 서비스코어 100만원 후원"}, {"month": "2월", "detail": "○ 남서울지방 지방장관, 지방여성사역서기관 환영예배\n       - 일시/장소 : 2월 1일, 영등포영문", "note": ""}, {"month": "2월", "detail": "○ '26년 사관.정교 신년하례회 (2/7, 인천영문)\n      - 예배설교 : 조진호 신임 지방장관\n      - 장학금(중,고등학생), 후원금 전달, 행운권 추첨 등", "note": "참석인원 : 70명\n정교/사관,지방장관"}, {"month": "4월", "detail": "○ 한국구세군 정교연합회 제38차 정기총회 참석 (4/25) \n     - 장소 : 충청지방 청주영문\n     - 연합회장 제38기 추대 : 부평명문 김재국 정교", "note": "참석인원 : 10개영문 25명"}, {"month": "4월", "detail": "○ 은퇴사관 봄 나들이 후원 (4/27)\n      - 춘천 제이든 가든 수목원", "note": "지방장관님 인솔 37명\n(100만원 후원)"}, {"month": "5월", "detail": "○ 한국교회 평신도 단체협의회 월례회 예배 (5/28)\n      - 주관 : 구세군 남서울지방(사회, 기도, 설교, 특순)\n      - 말씀 : 인천영문 담임사관 한문수", "note": "이순애 정교 등 9명 참석\n(선물비 70만원/사례비 20만원 후원)"}, {"month": "6월", "detail": "○ 영등포영문 신임정교, 원로정교 임명 (6/7)\n      - 원로정교 : 김철석, 전종면, 이병하\n      - 신임정교 : 장요식, 이상현, 김창현\n      * 축사 : 이순애 회장", "note": "축하화분 전달"}, {"month": "6월", "detail": "○ 정교회 정기월례회 (6/21, 수원영문)\n     - 예배설교 : 수원영문 최철호 담임사관\n     - 월례회의 : 남서울지방 체육대회, 여름성회, 임원선출 등", "note": "참석인원 : 8개영문 33명"}]};
-(function(){"use strict";
-const D=window.APP_DATA,notices=window.NOTICES||[],members=D.members||[],business=D.business||[],orgs=D.organizations||[],officers=members.filter(x=>x["남서울지방정교회 임원"]);const $=id=>document.getElementById(id),unique=a=>Array.from(new Set(a.filter(Boolean))),by=(a,k)=>a.reduce((o,x)=>(o[x[k]||"미분류"]=(o[x[k]||"미분류"]||0)+1,o),{});
-const rc=by(members,"지역"),cc=by(members,"영문"),pc=by(members,"직분"),titles={home:"홈",notices:"공지사항",search:"통합검색",members:"회원관리",stats:"지역통계",business:"사업내역",meetings:"월례회 자료",orgs:"시설·본영"};
-function show(p){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));$(p)?.classList.add("active");document.querySelectorAll("[data-page]").forEach(x=>x.classList.toggle("active",x.dataset.page===p));$("pageTitle").textContent=titles[p]||"남서울지방정교회";window.scrollTo(0,0)}document.querySelectorAll("[data-page]").forEach(b=>b.onclick=()=>show(b.dataset.page));
-$("kMembers").textContent=members.length;$("kCorps").textContent=Object.keys(cc).length;$("kRegions").textContent=Object.keys(rc).length;$("kOfficers").textContent=officers.length;
-$("homeRegionCards").innerHTML=Object.entries(rc).sort((a,b)=>b[1]-a[1]).map(([r,n])=>{const cs=unique(members.filter(x=>x["지역"]===r).map(x=>x["영문"])).sort();return `<div class="region-card"><div class="rname">${r}지역</div><div class="rnum">${n}명</div><div class="rmeta"><b>${cs.length}개 영문</b><br>${cs.join(" · ")}</div></div>`}).join("");
-function chart(el,obj){const a=Object.entries(obj).sort((x,y)=>y[1]-x[1]),m=Math.max(...a.map(x=>x[1]),1);el.innerHTML=a.map(([k,v])=>`<div class="barrow"><span>${k}</span><div class="track"><div class="fill" style="width:${(v/m*100).toFixed(1)}%"></div></div><b>${v}</b></div>`).join("")}chart($("regionChart"),rc);chart($("roleChart"),pc);chart($("corpsChart"),cc);
-$("regionSummary").innerHTML=Object.entries(rc).sort((a,b)=>b[1]-a[1]).map(([r,n])=>{const cs=unique(members.filter(x=>x["지역"]===r).map(x=>x["영문"])).sort();return `<tr><td><b>${r}</b></td><td>${cs.length}</td><td>${n}</td><td>${cs.join(", ")}</td></tr>`}).join("");
-$("corpsTable").innerHTML=Object.entries(cc).sort((a,b)=>b[1]-a[1]).map(([c,n],i)=>{const f=members.find(x=>x["영문"]===c)||{};return `<tr><td>${i+1}</td><td><b>${c}</b></td><td>${f["지역"]||"-"}</td><td>${n}</td><td>${f["담임사관"]||"-"}</td><td>${f["목양사관"]||"-"}</td></tr>`}).join("");
 
+<section id="notices" class="page"><div class="subpage"><h2>공지사항</h2><div id="noticeList"></div></div></section>
+
+<section id="search" class="page"><div class="subpage"><h2>통합검색</h2><div class="tools"><input id="globalSearch" style="min-width:280px" placeholder="이름, 영문, 직분, 사업내용, 시설명 검색"><button class="smallbtn" id="globalSearchBtn">검색</button></div><div id="searchResults"></div></div></section>
+
+<section id="members" class="page"><div class="subpage"><h2>회원관리</h2><div class="tools"><input id="memberSearch" placeholder="회원 검색"><select id="regionFilter"><option value="">전체 지역</option></select><select id="corpsFilter"><option value="">전체 영문</option></select><button class="smallbtn light" id="showPhones">연락처 보기</button><span id="memberCount"></span></div><div class="table-wrap"><table><thead><tr><th>번호</th><th>지역</th><th>영문</th><th>직분</th><th>성명</th><th>연락처</th><th>임원</th></tr></thead><tbody id="memberRows"></tbody></table></div></div></section>
+
+<section id="stats" class="page"><div class="subpage"><h2>지역통계</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div><h3>지역별 회원 현황</h3><div class="chart" id="regionChart"></div></div><div><h3>직분별 회원 현황</h3><div class="chart" id="roleChart"></div></div></div><h3 style="margin-top:20px">영문별 회원 현황</h3><div class="chart" id="corpsChart"></div></div></section>
+
+<section id="business" class="page"><div class="subpage"><h2>사업내역</h2><div id="businessList"></div></div></section>
+
+<section id="meetings" class="page"><div class="subpage"><h2>월례회자료</h2><div class="archive-item"><div><strong>2026년 6월 정기월례회</strong><p style="font-size:12px;color:#555">2026.06.21 · 수원영문 · 순서지 / 소식지</p></div><div style="display:flex;gap:7px"><a href="2026-06_monthly_order.pdf" target="_blank">순서지 보기</a><a href="2026-06_newsletter.pdf" target="_blank">소식지 보기</a></div></div></div></section>
+
+<section id="orgs" class="page"><div class="subpage"><h2>시설·본영</h2><div class="table-wrap"><table><thead><tr><th>구분</th><th>기관/영문</th><th>담당/담임</th><th>목양/보조</th><th>연락처</th></tr></thead><tbody id="orgRows"></tbody></table></div></div></section>
+</main>
+
+<footer class="footer">구세군 남서울지방 정교회　|　Copyright © 2026 The Salvation Army Namseoul Territory. All rights reserved.</footer>
+
+<script>
+window.APP_DATA={"meta": {"version": "V4.5", "asOf": "2026년 7월"}, "members": [{"번호": "1", "지역": "중부", "영문": "강남", "직분": "서기", "성명": "신동수", "연락처": "010-9927-3077", "남서울지방정교회 임원": "", "담임사관": "참령 안근정", "목양사관": "참령 김은애"}, {"번호": "2", "지역": "중부", "영문": "강남", "직분": "자산", "성명": "정구종", "연락처": "010-5251-1653", "남서울지방정교회 임원": "", "담임사관": "참령 안근정", "목양사관": "참령 김은애"}, {"번호": "3", "지역": "강남", "영문": "관악", "직분": "선교", "성명": "김장호", "연락처": "010-9493-0848", "남서울지방정교회 임원": "", "담임사관": "참령 이용운", "목양사관": "참령 김은주"}, {"번호": "4", "지역": "강남", "영문": "군포은혜", "직분": "선교", "성명": "김종찬", "연락처": "010-3688-6225", "남서울지방정교회 임원": "", "담임사관": "정위 윤현충", "목양사관": "정위 김선화"}, {"번호": "5", "지역": "강남", "영문": "군포은혜", "직분": "서기", "성명": "최재용", "연락처": "010-3185-0521", "남서울지방정교회 임원": "총무", "담임사관": "정위 윤현충", "목양사관": "정위 김선화"}, {"번호": "6", "지역": "강남", "영문": "군포은혜", "직분": "원로", "성명": "김윤수", "연락처": "010-6344-3656", "남서울지방정교회 임원": "", "담임사관": "정위 윤현충", "목양사관": "정위 김선화"}, {"번호": "7", "지역": "강남", "영문": "군포은혜", "직분": "원로", "성명": "방기호", "연락처": "010-8733-3112", "남서울지방정교회 임원": "", "담임사관": "정위 윤현충", "목양사관": "정위 김선화"}, {"번호": "8", "지역": "강남", "영문": "군포은혜", "직분": "원로", "성명": "정진규", "연락처": "010-2394-1865", "남서울지방정교회 임원": "감사", "담임사관": "정위 윤현충", "목양사관": "정위 김선화"}, {"번호": "9", "지역": "중부", "영문": "남서울", "직분": "선교", "성명": "김수균", "연락처": "010-8791-8866", "남서울지방정교회 임원": "", "담임사관": "참령 이재성", "목양사관": "참령 이은경"}, {"번호": "10", "지역": "중부", "영문": "남서울", "직분": "서기", "성명": "홍왕표", "연락처": "010-5217-9855", "남서울지방정교회 임원": "", "담임사관": "참령 이재성", "목양사관": "참령 이은경"}, {"번호": "11", "지역": "중부", "영문": "남서울", "직분": "재무", "성명": "권영남", "연락처": "010-8943-1504", "남서울지방정교회 임원": "", "담임사관": "참령 이재성", "목양사관": "참령 이은경"}, {"번호": "12", "지역": "중부", "영문": "남서울", "직분": "원로", "성명": "서판용", "연락처": "010-8717-6455", "남서울지방정교회 임원": "", "담임사관": "참령 이재성", "목양사관": "참령 이은경"}, {"번호": "13", "지역": "인천", "영문": "만수", "직분": "선교", "성명": "서민석", "연락처": "010-7343-0733", "남서울지방정교회 임원": "", "담임사관": "참령 박종서", "목양사관": "참령 김영순"}, {"번호": "14", "지역": "강남", "영문": "부천", "직분": "선교", "성명": "정철영", "연락처": "010-9460-8331", "남서울지방정교회 임원": "고문", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "15", "지역": "강남", "영문": "부천", "직분": "서기", "성명": "곽종구", "연락처": "010-3232-7921", "남서울지방정교회 임원": "서기", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "16", "지역": "강남", "영문": "부천", "직분": "재무", "성명": "송웅섭", "연락처": "010-3760-9830", "남서울지방정교회 임원": "", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "17", "지역": "강남", "영문": "부천", "직분": "청년", "성명": "고성규", "연락처": "010-2207-6150", "남서울지방정교회 임원": "", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "18", "지역": "강남", "영문": "부천", "직분": "원로", "성명": "이만희", "연락처": "010-6770-6684", "남서울지방정교회 임원": "", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "19", "지역": "강남", "영문": "부천", "직분": "원로", "성명": "문공주", "연락처": "010-5334-3117", "남서울지방정교회 임원": "", "담임사관": "참령 조한근", "목양사관": "참령 김선화"}, {"번호": "20", "지역": "인천", "영문": "부평", "직분": "서기", "성명": "천정수", "연락처": "010-3333-5704", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "21", "지역": "인천", "영문": "부평", "직분": "교육", "성명": "김성호", "연락처": "010-9593-5032", "남서울지방정교회 임원": "수석부회장", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "22", "지역": "인천", "영문": "부평", "직분": "자산", "성명": "김재국", "연락처": "010-9391-5722", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "23", "지역": "인천", "영문": "부평", "직분": "청년", "성명": "최용호", "연락처": "010-6329-6526", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "24", "지역": "인천", "영문": "부평", "직분": "협동", "성명": "이순애", "연락처": "010-2777-3232", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "25", "지역": "인천", "영문": "부평", "직분": "원로", "성명": "한영식", "연락처": "010-6341-3230", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "26", "지역": "인천", "영문": "부평", "직분": "원로", "성명": "최광선", "연락처": "010-7337-6526", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "27", "지역": "인천", "영문": "부평", "직분": "원로", "성명": "이명자", "연락처": "010-8279-7070", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "28", "지역": "인천", "영문": "부평", "직분": "원로", "성명": "최승천", "연락처": "010-7130-7251", "남서울지방정교회 임원": "", "담임사관": "참령 염용돈", "목양사관": "참령 고현옥"}, {"번호": "29", "지역": "인천", "영문": "송림", "직분": "선교", "성명": "정용실", "연락처": "010-5328-3728", "남서울지방정교회 임원": "고문", "담임사관": "참령 임효민", "목양사관": "참령 김민정"}, {"번호": "30", "지역": "인천", "영문": "송림", "직분": "서기", "성명": "김영호", "연락처": "010-4726-6208", "남서울지방정교회 임원": "감사", "담임사관": "참령 임효민", "목양사관": "참령 김민정"}, {"번호": "31", "지역": "인천", "영문": "송림", "직분": "재무", "성명": "이정관", "연락처": "010-5273-0697", "남서울지방정교회 임원": "", "담임사관": "참령 임효민", "목양사관": "참령 김민정"}, {"번호": "32", "지역": "인천", "영문": "송림", "직분": "원로", "성명": "정영자", "연락처": "010-5147-9880", "남서울지방정교회 임원": "", "담임사관": "참령 임효민", "목양사관": "참령 김민정"}, {"번호": "33", "지역": "인천", "영문": "송림", "직분": "원로", "성명": "김재규", "연락처": "010-2227-6649", "남서울지방정교회 임원": "", "담임사관": "참령 임효민", "목양사관": "참령 김민정"}, {"번호": "34", "지역": "경기", "영문": "송탄", "직분": "선교", "성명": "서종근", "연락처": "010-9101-5779", "남서울지방정교회 임원": "", "담임사관": "참령 유계준", "목양사관": "참령 김한정"}, {"번호": "35", "지역": "경기", "영문": "송탄", "직분": "서기", "성명": "최종기", "연락처": "010-3362-1681", "남서울지방정교회 임원": "", "담임사관": "참령 유계준", "목양사관": "참령 김한정"}, {"번호": "36", "지역": "경기", "영문": "송탄", "직분": "원로", "성명": "박용세", "연락처": "010-8621-7147", "남서울지방정교회 임원": "", "담임사관": "참령 유계준", "목양사관": "참령 김한정"}, {"번호": "37", "지역": "중부", "영문": "수원", "직분": "선교", "성명": "유현구", "연락처": "010-4145-4470", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "38", "지역": "중부", "영문": "수원", "직분": "서기", "성명": "최상욱", "연락처": "010-5214-8423", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "39", "지역": "중부", "영문": "수원", "직분": "자산", "성명": "김종호", "연락처": "010-3181-2363", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "40", "지역": "중부", "영문": "수원", "직분": "청년", "성명": "신훈영", "연락처": "010-4041-0051", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "41", "지역": "중부", "영문": "수원", "직분": "원로", "성명": "최경락", "연락처": "010-5377-5053", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "42", "지역": "중부", "영문": "수원", "직분": "원로", "성명": "최태석", "연락처": "010-6349-7867", "남서울지방정교회 임원": "", "담임사관": "정위 최철호", "목양사관": "정위 김유미"}, {"번호": "43", "지역": "경기", "영문": "안성", "직분": "선교", "성명": "박상기", "연락처": "010-8785-3859", "남서울지방정교회 임원": "고문", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "44", "지역": "경기", "영문": "안성", "직분": "서기", "성명": "서정식", "연락처": "010-6740-4704", "남서울지방정교회 임원": "", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "45", "지역": "경기", "영문": "안성", "직분": "재무", "성명": "허오욱", "연락처": "010-6306-3961", "남서울지방정교회 임원": "부회장", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "46", "지역": "경기", "영문": "안성", "직분": "자산", "성명": "배인환", "연락처": "010-9350-8572", "남서울지방정교회 임원": "", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "47", "지역": "경기", "영문": "안성", "직분": "청년", "성명": "김은주", "연락처": "010-7115-9586", "남서울지방정교회 임원": "", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "48", "지역": "경기", "영문": "안성", "직분": "원로", "성명": "윤용민", "연락처": "010-3376-3179", "남서울지방정교회 임원": "", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "49", "지역": "경기", "영문": "안성", "직분": "원로", "성명": "윤종홍", "연락처": "010-9536-3396", "남서울지방정교회 임원": "", "담임사관": "참령 이덕균", "목양사관": "참령 장영주"}, {"번호": "50", "지역": "중부", "영문": "안양", "직분": "서기", "성명": "주  혁", "연락처": "010-2393-2451", "남서울지방정교회 임원": "부회장", "담임사관": "참령 김성순", "목양사관": "참령 김양희"}, {"번호": "51", "지역": "중부", "영문": "안양", "직분": "재무", "성명": "김상규", "연락처": "010-2386-1990", "남서울지방정교회 임원": "", "담임사관": "참령 김성순", "목양사관": "참령 김양희"}, {"번호": "52", "지역": "중부", "영문": "안양", "직분": "원로", "성명": "고용운", "연락처": "010-5343-9779", "남서울지방정교회 임원": "", "담임사관": "참령 김성순", "목양사관": "참령 김양희"}, {"번호": "53", "지역": "강남", "영문": "연합", "직분": "재무", "성명": "강근식", "연락처": "010-9111-1913", "남서울지방정교회 임원": "", "담임사관": "정위 이상근", "목양사관": "정위 이한나"}, {"번호": "54", "지역": "강남", "영문": "영등포", "직분": "선교", "성명": "장요식", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "55", "지역": "강남", "영문": "영등포", "직분": "서기", "성명": "이상현", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "56", "지역": "강남", "영문": "영등포", "직분": "교육", "성명": "김찬현", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "57", "지역": "강남", "영문": "영등포", "직분": "재무", "성명": "김경란", "연락처": "010-9170-3080", "남서울지방정교회 임원": "재무", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "58", "지역": "강남", "영문": "영등포", "직분": "청년", "성명": "강수형", "연락처": "010-7724-6251", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "59", "지역": "강남", "영문": "영등포", "직분": "사회복지", "성명": "노숙희", "연락처": "010-3221-2062", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "60", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "김철석", "연락처": "010-5253-8156", "남서울지방정교회 임원": "명예회장", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "61", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "이병하", "연락처": "010-9022-2571", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "62", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "전종면", "연락처": "010-2170-8254", "남서울지방정교회 임원": "부회장", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "63", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "강  옥", "연락처": "010-2387-6635", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "64", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "임세영", "연락처": "010-2081-9171", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "65", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "이상국", "연락처": "010-2702-0091", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "66", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "권승남", "연락처": "010-4258-4764", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "67", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "김기두", "연락처": "010-2602-2928", "남서울지방정교회 임원": "고문", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "68", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "최병윤", "연락처": "010-5361-5991", "남서울지방정교회 임원": "고문", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "69", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "윤경용", "연락처": "010-6323-2147", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "70", "지역": "강남", "영문": "영등포", "직분": "원로", "성명": "윤병기", "연락처": "010-2245-7963", "남서울지방정교회 임원": "", "담임사관": "참령 김병선", "목양사관": "참령 박윤희"}, {"번호": "71", "지역": "경기", "영문": "이천", "직분": "서기", "성명": "신종만", "연락처": "010-4517-2975", "남서울지방정교회 임원": "", "담임사관": "참령 정택영", "목양사관": "참령 박혜수"}, {"번호": "72", "지역": "경기", "영문": "이천", "직분": "재무", "성명": "김은수", "연락처": "010-6506-5870", "남서울지방정교회 임원": "", "담임사관": "참령 정택영", "목양사관": "참령 박혜수"}, {"번호": "73", "지역": "경기", "영문": "이천", "직분": "원로", "성명": "박기우", "연락처": "010-4242-7262", "남서울지방정교회 임원": "", "담임사관": "참령 정택영", "목양사관": "참령 박혜수"}, {"번호": "74", "지역": "인천", "영문": "인천", "직분": "선교", "성명": "이순애", "연락처": "010-2838-8357", "남서울지방정교회 임원": "회장", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "75", "지역": "인천", "영문": "인천", "직분": "서기", "성명": "전두수", "연락처": "010-4305-6276", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "76", "지역": "인천", "영문": "인천", "직분": "복지", "성명": "김인곤", "연락처": "010-9489-2877", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "77", "지역": "인천", "영문": "인천", "직분": "교육", "성명": "최병우", "연락처": "010-6270-5211", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "78", "지역": "인천", "영문": "인천", "직분": "자산", "성명": "안병은", "연락처": "010-9047-3815", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "79", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "손철헌", "연락처": "010-6320-6475", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "80", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "홍순모", "연락처": "010-2428-2320", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "81", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "배형선", "연락처": "010-9193-0515", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "82", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "이경숙", "연락처": "010-6728-4342", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "83", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "김수일", "연락처": "010-5332-2031", "남서울지방정교회 임원": "고문", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "84", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "권병돈", "연락처": "010-3877-5448", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "85", "지역": "인천", "영문": "인천", "직분": "원로", "성명": "이명섭", "연락처": "010-5331-3362", "남서울지방정교회 임원": "", "담임사관": "정위 한문수", "목양사관": "정위 구민정"}, {"번호": "86", "지역": "인천", "영문": "인평", "직분": "선교", "성명": "손현식", "연락처": "010-5340-7061", "남서울지방정교회 임원": "", "담임사관": "정위 정일해", "목양사관": "정위 윤효정"}, {"번호": "87", "지역": "경기", "영문": "오산", "직분": "선교", "성명": "강인구", "연락처": "010-8336-1156", "남서울지방정교회 임원": "", "담임사관": "정위 정상혁", "목양사관": "정위 전혜원"}, {"번호": "88", "지역": "경기", "영문": "평택", "직분": "선교", "성명": "이기창", "연락처": "010-6788-8159", "남서울지방정교회 임원": "", "담임사관": "참령 김필용", "목양사관": "참령 윤희정"}, {"번호": "89", "지역": "경기", "영문": "평택", "직분": "서기", "성명": "강이임", "연락처": "010-8331-6296", "남서울지방정교회 임원": "", "담임사관": "참령 김필용", "목양사관": "참령 윤희정"}], "organizations": [{"번호": "90", "지역": "중부", "영문": "안산", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 김진태", "목양사관": "참령 정강숙"}, {"번호": "91", "지역": "중부", "영문": "밀알", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 김기태", "목양사관": "-"}, {"번호": "92", "지역": "인천", "영문": "평강", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 정홍례", "목양사관": "-"}, {"번호": "93", "지역": "인천", "영문": "미추홀", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "부위 구현모", "목양사관": "부위 김수경"}, {"번호": "94", "지역": "경기", "영문": "남안성", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "정위 현은숙", "목양사관": "-"}, {"번호": "95", "지역": "경기", "영문": "북안성", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "참령 이종우", "목양사관": "참령 김회경"}, {"번호": "96", "지역": "사회복지시설", "영문": "합정노인복지세터", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "센터장 참령 김필용", "목양사관": "-"}, {"번호": "97", "지역": "사회복지시설", "영문": "샛별어린이집", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "대표 정위 전혜원", "목양사관": "-"}, {"번호": "98", "지역": "사회복지시설", "영문": "와동지역어린이센터", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "센터장 참령 정강숙", "목양사관": "-"}, {"번호": "99", "지역": "사회복지시설", "영문": "평택재가복지센터", "직분": "", "성명": "", "연락처": "", "남서울지방정교회 임원": "", "담임사관": "센터장 참령 변진옥", "목양사관": "-"}, {"번호": "100", "지역": "지방본영", "영문": "지방본영", "직분": "", "성명": "", "연락처": "031-236-7811", "남서울지방정교회 임원": "", "담임사관": "지방장관 부정령 조진호", "목양사관": "지방여성사역서기관 부정령 김주연"}], "business": [{"month": "'25.10월", "detail": "○ 영등포영문 이병하 정교 장모 소천 (10/11)", "note": "근조화 전달"}, {"month": "'25.10월", "detail": "○ 인천영문 신임정교 및 원로정교 임명 (10/26)\n     - 원로정교 : 전두수\n     - 신임정교 : 최광복", "note": "축하화분 전달"}, {"month": "11월", "detail": "○ 정교회 정기월례회 (11/9, 영등포영문), 8개 영문/27명 참석\n     - 예배설교 : 영등포영문 김병선 담임사관\n     - 월례회의 : '26년 사관,정교 신년하례회 시행건 토의", "note": "참석인원 : 8개 영문 22명\n식사 : 영등포영문 가정단"}, {"month": "12월", "detail": "○ 남서울지방 자선냄비 봉사자 헌신예배 참석 (12/7)\n     - 장소 : 영등포영문", "note": "각 영문별 자선냄비 봉사"}, {"month": "'26.1월", "detail": "○ 신년축복성회 참석 (1/1~3)\n     - 장소 : 백화산수련원", "note": ""}, {"month": "'26.1월", "detail": "○ 남서울지방 신앙전진대회 (1/18, 영등포영문)\n ○ 임원 임시회의 (1/18, 영등포 영문 14:30~15:10)\n     - 참석자 : 이순애 회장 등 7명\n     - 안건 : '26년 사관.정교 신년하례회 시행안건 토의", "note": "태국 서비스코어 100만원 후원"}, {"month": "2월", "detail": "○ 남서울지방 지방장관, 지방여성사역서기관 환영예배\n       - 일시/장소 : 2월 1일, 영등포영문", "note": ""}, {"month": "2월", "detail": "○ '26년 사관.정교 신년하례회 (2/7, 인천영문)\n      - 예배설교 : 조진호 신임 지방장관\n      - 장학금(중,고등학생), 후원금 전달, 행운권 추첨 등", "note": "참석인원 : 70명\n정교/사관,지방장관"}, {"month": "4월", "detail": "○ 한국구세군 정교연합회 제38차 정기총회 참석 (4/25) \n     - 장소 : 충청지방 청주영문\n     - 연합회장 제38기 추대 : 부평명문 김재국 정교", "note": "참석인원 : 10개영문 25명"}, {"month": "4월", "detail": "○ 은퇴사관 봄 나들이 후원 (4/27)\n      - 춘천 제이든 가든 수목원", "note": "지방장관님 인솔 37명\n(100만원 후원)"}, {"month": "5월", "detail": "○ 한국교회 평신도 단체협의회 월례회 예배 (5/28)\n      - 주관 : 구세군 남서울지방(사회, 기도, 설교, 특순)\n      - 말씀 : 인천영문 담임사관 한문수", "note": "이순애 정교 등 9명 참석\n(선물비 70만원/사례비 20만원 후원)"}, {"month": "6월", "detail": "○ 영등포영문 신임정교, 원로정교 임명 (6/7)\n      - 원로정교 : 김철석, 전종면, 이병하\n      - 신임정교 : 장요식, 이상현, 김창현\n      * 축사 : 이순애 회장", "note": "축하화분 전달"}, {"month": "6월", "detail": "○ 정교회 정기월례회 (6/21, 수원영문)\n     - 예배설교 : 수원영문 최철호 담임사관\n     - 월례회의 : 남서울지방 체육대회, 여름성회, 임원선출 등", "note": "참석인원 : 8개영문 33명"}]};
+window.NOTICES=[{"date": "2026-08-12", "title": "남서울지방 여름성회 안내", "body": "남서울지방 여름성회가 2026년 8월 12일부터 14일까지 서울지방 과천영문에서 개최될 예정입니다. 정교회에서는 주차안내와 특송 등 봉사사역에 참여합니다.", "attachment": ""}, {"date": "2026-10", "title": "차기 임원선출 예정 안내", "body": "차기 임원선출은 2026년 10월에 실시될 예정입니다.", "attachment": ""}];
+(function(){
+"use strict";
+const D=window.APP_DATA||{},members=D.members||[],business=D.business||[],orgs=D.organizations||[],notices=window.NOTICES||[];
+const $=id=>document.getElementById(id),by=(a,k)=>a.reduce((o,x)=>(o[x[k]||"미분류"]=(o[x[k]||"미분류"]||0)+1,o),{}),unique=a=>Array.from(new Set(a.filter(Boolean)));
+const officers=members.filter(x=>x["남서울지방정교회 임원"]);
+window.showPage=function(page){
+ document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+ $(page)?.classList.add("active");
+ document.querySelectorAll(".nav button").forEach(x=>x.classList.toggle("active",x.dataset.page===page));
+ window.scrollTo(0,0);
+};
+document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>showPage(b.dataset.page));
+
+// Notices
+function noticeHTML(n){
+ const d=String(n.date||"").replaceAll("-",".");
+ return `<div class="notice-item"><div class="notice-row"><div class="date">${d}</div><div><div class="notice-title">${n.title}<span class="newdot">N</span></div><div class="notice-text">${n.body}</div></div></div></div>`;
+}
+const sortedNotices=notices.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+$("homeNotices").innerHTML=sortedNotices.slice(0,3).map(noticeHTML).join("");
+$("noticeList").innerHTML=sortedNotices.map(n=>`<div class="search-result"><strong>${n.title}</strong><p>${n.date} · ${n.body}</p></div>`).join("");
+
+// Business
+const recentBiz=business.slice(-3).reverse();
+$("homeBusiness").innerHTML=recentBiz.map(e=>`<div class="biz-item"><div class="biz-title">${(e.detail||"").split("\n")[0]}</div><div class="biz-text">${String(e.detail||"").replace(/\n/g,"<br>")}</div></div>`).join("");
+$("businessList").innerHTML=business.map(e=>`<div class="search-result"><strong>${e.month||""}</strong><p>${String(e.detail||"").replace(/\n/g," · ")}${e.note?" · "+e.note:""}</p></div>`).join("");
+
+// Officers
 const practicalOrder=["회장","감사","총무","서기","재무"];
 const otherOrder=["수석부회장","부회장","명예회장","고문"];
-const roleRank=(role,order)=>{const i=order.indexOf(role);return i<0?999:i};
-const practicalOfficers=officers.filter(x=>practicalOrder.includes(x["남서울지방정교회 임원"]))
- .sort((a,b)=>roleRank(a["남서울지방정교회 임원"],practicalOrder)-roleRank(b["남서울지방정교회 임원"],practicalOrder));
-const otherOfficers=officers.filter(x=>otherOrder.includes(x["남서울지방정교회 임원"]))
- .sort((a,b)=>roleRank(a["남서울지방정교회 임원"],otherOrder)-roleRank(b["남서울지방정교회 임원"],otherOrder));
-const renderOfficerCards=list=>list.map(x=>`<div class="officer"><div class="role">${x["남서울지방정교회 임원"]}</div><strong>${x["성명"]}</strong><div class="muted">${x["영문"]} · ${x["직분"]||"-"}</div></div>`).join("");
-$("executiveOfficerList").innerHTML=renderOfficerCards(practicalOfficers);
-$("otherOfficerList").innerHTML=renderOfficerCards(otherOfficers);
-
-unique(members.map(x=>x["지역"])).sort().forEach(x=>$("regionFilter").insertAdjacentHTML("beforeend",`<option>${x}</option>`));unique(members.map(x=>x["영문"])).sort().forEach(x=>$("corpsFilter").insertAdjacentHTML("beforeend",`<option>${x}</option>`));
-const mask=p=>p?String(p).replace(/(\\d{3})-\\d{3,4}-(\\d{4})/,"$1-****-$2"):"-";function render(){const q=$("memberSearch").value.trim().toLowerCase(),r=$("regionFilter").value,c=$("corpsFilter").value;const f=members.filter(x=>(!r||x["지역"]===r)&&(!c||x["영문"]===c)&&(!q||Object.values(x).some(v=>String(v||"").toLowerCase().includes(q))));$("memberCount").textContent=f.length+"명";$("memberRows").innerHTML=f.map(x=>`<tr><td>${x["번호"]}</td><td>${x["지역"]}</td><td><b>${x["영문"]}</b></td><td>${x["직분"]||"-"}</td><td>${x["성명"]}</td><td class="phone" data-phone="${x["연락처"]||""}">${mask(x["연락처"])}</td><td>${x["남서울지방정교회 임원"]?'<span class="badge">'+x["남서울지방정교회 임원"]+'</span>':"-"}</td></tr>`).join("")}$("memberSearch").oninput=render;$("regionFilter").onchange=render;$("corpsFilter").onchange=render;$("showPhones").onclick=()=>document.querySelectorAll(".phone").forEach(x=>x.textContent=x.dataset.phone||"-");render();
-
-function noticeCard(n){
- const a=n.attachment?`<a href="${n.attachment}" target="_blank" rel="noopener">첨부파일 보기</a>`:"";
- return `<div class="notice-card"><div class="notice-date">${n.date}</div><h4>${n.title}</h4><p>${n.body}</p>${a?'<div class="notice-actions">'+a+'</div>':""}</div>`;
+const rank=(r,a)=>{const i=a.indexOf(r);return i<0?999:i};
+const practical=officers.filter(x=>practicalOrder.includes(x["남서울지방정교회 임원"])).sort((a,b)=>rank(a["남서울지방정교회 임원"],practicalOrder)-rank(b["남서울지방정교회 임원"],practicalOrder));
+const others=officers.filter(x=>otherOrder.includes(x["남서울지방정교회 임원"])).sort((a,b)=>rank(a["남서울지방정교회 임원"],otherOrder)-rank(b["남서울지방정교회 임원"],otherOrder));
+const iconMap={"회장":"●","감사":"✓","총무":"▤","서기":"✎","재무":"₩"};
+$("execGrid").innerHTML=practical.map(x=>`<div class="exec-card"><div class="exec-icon">${iconMap[x["남서울지방정교회 임원"]]||"★"}</div><div class="exec-role">${x["남서울지방정교회 임원"]}</div><div class="exec-name">${x["성명"]}</div><div class="exec-meta">${x["영문"]}</div></div>`).join("");
+function groupedCard(role,list){
+ if(!list.length)return "";
+ let main=list[0];
+ let nameText=list.length===1?main["성명"]:`${list.length}명`;
+ let meta=list.length===1?main["영문"]:"각 영문";
+ return `<div class="other-card"><div class="other-icon">${role==="수석부회장"?"♛":role==="명예회장"?"♚":role==="고문"?"♟":"👥"}</div><div class="other-role">${role}</div><div class="other-name">${nameText}</div><div class="other-meta">${meta}</div></div>`;
 }
-$("noticeList").innerHTML=notices.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))).map(noticeCard).join("");
-$("homeNoticeList").innerHTML=notices.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))).slice(0,3).map(noticeCard).join("");
-$("businessList").innerHTML=business.map(e=>`<div class="event"><div class="month">${e.month||"계속"}</div><div class="detail">${String(e.detail||"").replace(/\n/g,"<br>")}</div>${e.note?'<div class="note">비고 · '+String(e.note).replace(/\n/g," · ")+"</div>":""}</div>`).join("");$("recentBusiness").innerHTML=business.slice(-3).reverse().map(e=>`<div class="recent-business-card"><div class="month">${e.month||"계속"}</div><div class="detail">${String(e.detail||"").replace(/\n/g,"<br>")}</div></div>`).join("");
+$("otherGrid").innerHTML=otherOrder.map(r=>groupedCard(r,others.filter(x=>x["남서울지방정교회 임원"]===r))).join("");
+
+// Member table
+const regionFilter=$("regionFilter"),corpsFilter=$("corpsFilter");
+unique(members.map(x=>x["지역"])).sort().forEach(v=>regionFilter.insertAdjacentHTML("beforeend",`<option>${v}</option>`));
+unique(members.map(x=>x["영문"])).sort().forEach(v=>corpsFilter.insertAdjacentHTML("beforeend",`<option>${v}</option>`));
+const mask=p=>p?String(p).replace(/(\d{3})-\d{3,4}-(\d{4})/,"$1-****-$2"):"-";
+function renderMembers(){
+ const q=$("memberSearch").value.trim().toLowerCase(),r=regionFilter.value,c=corpsFilter.value;
+ const f=members.filter(x=>(!r||x["지역"]===r)&&(!c||x["영문"]===c)&&(!q||Object.values(x).some(v=>String(v||"").toLowerCase().includes(q))));
+ $("memberCount").textContent=f.length+"명";
+ $("memberRows").innerHTML=f.map(x=>`<tr><td>${x["번호"]}</td><td>${x["지역"]}</td><td>${x["영문"]}</td><td>${x["직분"]||"-"}</td><td><b>${x["성명"]}</b></td><td class="phone" data-phone="${x["연락처"]||""}">${mask(x["연락처"])}</td><td>${x["남서울지방정교회 임원"]||"-"}</td></tr>`).join("");
+}
+$("memberSearch").oninput=renderMembers;regionFilter.onchange=renderMembers;corpsFilter.onchange=renderMembers;$("showPhones").onclick=()=>document.querySelectorAll(".phone").forEach(x=>x.textContent=x.dataset.phone||"-");renderMembers();
+
+// Charts
+function chart(el,obj){
+ const a=Object.entries(obj).sort((x,y)=>y[1]-x[1]),m=Math.max(...a.map(x=>x[1]),1);
+ el.innerHTML=a.map(([k,v])=>`<div class="barrow"><span>${k}</span><div class="track"><div class="fill" style="width:${(v/m*100).toFixed(1)}%"></div></div><b>${v}</b></div>`).join("");
+}
+chart($("regionChart"),by(members,"지역"));chart($("roleChart"),by(members,"직분"));chart($("corpsChart"),by(members,"영문"));
+
+// Organizations
 $("orgRows").innerHTML=orgs.map(o=>`<tr><td>${o["지역"]}</td><td><b>${o["영문"]}</b></td><td>${o["담임사관"]||"-"}</td><td>${o["목양사관"]||"-"}</td><td>${o["연락처"]||"-"}</td></tr>`).join("");
-function search(q){q=(q||"").trim().toLowerCase();show("search");$("globalSearch").value=q;if(!q){$("searchResults").innerHTML='<div class="empty">검색어를 입력하세요.</div>';return}const ns=notices.filter(x=>(x.date+" "+x.title+" "+x.body).toLowerCase().includes(q)),
-ms=members.filter(x=>Object.values(x).some(v=>String(v||"").toLowerCase().includes(q))),
-bs=business.filter(x=>(x.month+" "+x.detail+" "+x.note).toLowerCase().includes(q)),
-os=orgs.filter(x=>Object.values(x).some(v=>String(v||"").toLowerCase().includes(q))),
-meetingMatch=("2026년 6월 정기월례회 수원영문 순서지 소식지 재정보고 사업보고 여름성회 임원선출").toLowerCase().includes(q);
-let h="";if(ns.length)h+=`<h4>공지사항 · ${ns.length}건</h4>`+ns.map(x=>`<div class="result"><strong>${x.title}</strong><p>${x.date} · ${x.body}</p></div>`).join("");if(ms.length)h+=`<h4>회원 · ${ms.length}건</h4>`+ms.slice(0,30).map(x=>`<div class="result"><strong>${x["성명"]} · ${x["영문"]}</strong><p>${x["지역"]}지역 · ${x["직분"]||"-"}${x["남서울지방정교회 임원"]?" · "+x["남서울지방정교회 임원"]:""}</p></div>`).join("");if(bs.length)h+=`<h4>사업내역 · ${bs.length}건</h4>`+bs.map(x=>`<div class="result"><strong>${x.month}</strong><p>${x.detail.replace(/\n/g," · ")}</p></div>`).join("");if(meetingMatch)h+=`<h4>월례회 자료 · 1건</h4><div class="result"><strong>2026년 6월 정기월례회</strong><p>2026.06.21 · 수원영문 · <a href="2026-06_monthly_order.pdf" target="_blank">순서지</a> · <a href="2026-06_newsletter.pdf" target="_blank">소식지</a></p></div>`;if(os.length)h+=`<h4>시설·본영 · ${os.length}건</h4>`+os.map(x=>`<div class="result"><strong>${x["영문"]}</strong><p>${x["지역"]} · ${x["담임사관"]||"-"}</p></div>`).join("");$("searchResults").innerHTML=h||'<div class="empty">검색 결과가 없습니다.</div>'}
-$("globalSearchBtn").onclick=()=>search($("globalSearch").value);$("globalSearch").onkeydown=e=>{if(e.key==="Enter")search(e.target.value)};$("quickSearchBtn").onclick=()=>search($("quickSearch").value);$("quickSearch").onkeydown=e=>{if(e.key==="Enter")search(e.target.value)};
-})();</script></body></html>
+
+// Search
+function doSearch(q){
+ q=(q||"").trim().toLowerCase();
+ if(!q){$("searchResults").innerHTML='<div class="search-result"><p>검색어를 입력하세요.</p></div>';return}
+ let h="";
+ notices.filter(x=>(x.title+" "+x.body+" "+x.date).toLowerCase().includes(q)).forEach(x=>h+=`<div class="search-result"><strong>공지 · ${x.title}</strong><p>${x.date} · ${x.body}</p></div>`);
+ members.filter(x=>Object.values(x).some(v=>String(v||"").toLowerCase().includes(q))).slice(0,30).forEach(x=>h+=`<div class="search-result"><strong>회원 · ${x["성명"]}</strong><p>${x["지역"]} · ${x["영문"]} · ${x["직분"]||"-"}</p></div>`);
+ business.filter(x=>(x.month+" "+x.detail+" "+x.note).toLowerCase().includes(q)).forEach(x=>h+=`<div class="search-result"><strong>사업 · ${x.month}</strong><p>${x.detail.replace(/\n/g," · ")}</p></div>`);
+ orgs.filter(x=>Object.values(x).some(v=>String(v||"").toLowerCase().includes(q))).forEach(x=>h+=`<div class="search-result"><strong>시설 · ${x["영문"]}</strong><p>${x["지역"]} · ${x["담임사관"]||"-"}</p></div>`);
+ $("searchResults").innerHTML=h||'<div class="search-result"><p>검색 결과가 없습니다.</p></div>';
+}
+$("globalSearchBtn").onclick=()=>doSearch($("globalSearch").value);$("globalSearch").onkeydown=e=>{if(e.key==="Enter")doSearch(e.target.value)};
+})();
+</script>
+</body></html>
