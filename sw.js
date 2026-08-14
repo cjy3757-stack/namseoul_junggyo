@@ -1,4 +1,30 @@
-const CACHE='nsj-v3-20260814';const ASSETS=['./','./index.html','./style.css','./data.js','./app.js','./manifest.webmanifest','./logo.png','./icon-192.png','./icon-512.png'];
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));
-self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));
-self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
+// V3.0.2 cache kill-switch.
+// This file intentionally does NOT cache the app.
+self.addEventListener("install", event => {
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", event => {
+  event.waitUntil((async () => {
+    try {
+      const keys = await caches.keys();
+      await Promise.all(keys.map(k => caches.delete(k)));
+      await self.clients.claim();
+      const clients = await self.clients.matchAll({type:"window", includeUncontrolled:true});
+      for (const client of clients) {
+        try {
+          const url = new URL(client.url);
+          url.searchParams.set("v","302");
+          await client.navigate(url.toString());
+        } catch(e) {}
+      }
+      // Remove this service worker after it has cleared the old registrations/caches.
+      await self.registration.unregister();
+    } catch(e) {}
+  })());
+});
+
+self.addEventListener("fetch", event => {
+  // Never return an old cached response. Always use the network.
+  event.respondWith(fetch(event.request, {cache:"no-store"}).catch(() => fetch(event.request)));
+});
