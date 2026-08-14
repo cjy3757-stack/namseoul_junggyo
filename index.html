@@ -59,7 +59,7 @@ main{max-width:1500px;margin:auto;padding:20px 24px 26px}.page{display:none}.pag
 @media(max-width:1050px){.brand{height:140px}.brand h1{font-size:30px}.brand img{width:85px;height:85px}.nav{overflow:auto;justify-content:flex-start}.nav button{min-width:110px;padding:15px 16px;font-size:13px}.dashboard-grid,.lower-grid,.officers-body{grid-template-columns:1fr}.exec-grid{grid-template-columns:repeat(3,1fr)}.other-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){main{padding:12px 10px 20px}.brand{height:116px;gap:10px}.brand img{width:62px;height:62px}.brand h1{font-size:20px}.brand p{font-size:12px}.dashboard-grid{grid-template-columns:1fr}.exec-grid{grid-template-columns:repeat(2,1fr)}.quick-grid{grid-template-columns:repeat(2,1fr)}}
 
-/* V5.1 compact officer layout */
+/* V5.2 compact officer layout */
 .officers-body{
   grid-template-columns:1fr;
   gap:10px;
@@ -120,6 +120,101 @@ main{max-width:1500px;margin:auto;padding:20px 24px 26px}.page{display:none}.pag
   .exec-card,.other-card{min-height:96px}
 }
 
+
+/* V5.2 GitHub Pages final - compact officers */
+.officers-body{
+  display:grid !important;
+  grid-template-columns: 0.78fr 1.22fr !important;
+  gap:10px !important;
+  padding:0 10px 10px !important;
+}
+.exec-box,.other-box{
+  width:100%;
+  padding:6px !important;
+}
+.exec-title,.other-title{
+  padding:2px 0 5px !important;
+  font-size:12px !important;
+}
+.exec-grid{
+  grid-template-columns:repeat(3,minmax(88px,1fr)) !important;
+  gap:5px !important;
+  margin-top:5px !important;
+}
+.exec-card{
+  min-height:82px !important;
+  padding:5px 3px !important;
+  border-radius:8px !important;
+}
+.exec-icon{
+  width:25px !important;
+  height:25px !important;
+  font-size:13px !important;
+  margin:0 auto 3px !important;
+}
+.exec-role{
+  font-size:10px !important;
+  line-height:1.15 !important;
+}
+.exec-name{
+  font-size:12px !important;
+  line-height:1.15 !important;
+  margin-top:2px !important;
+}
+.exec-meta{
+  font-size:8px !important;
+  margin-top:2px !important;
+  line-height:1.15 !important;
+}
+.other-grid{
+  grid-template-columns:repeat(7,minmax(78px,1fr)) !important;
+  gap:5px !important;
+  margin-top:5px !important;
+}
+.other-card{
+  min-height:82px !important;
+  padding:5px 3px !important;
+  border-radius:8px !important;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.other-icon{
+  font-size:15px !important;
+  margin:0 0 2px !important;
+}
+.other-role{
+  font-size:9px !important;
+  line-height:1.1 !important;
+  margin-top:2px !important;
+  color:#233653;
+  font-weight:850;
+}
+.other-name{
+  font-size:11px !important;
+  line-height:1.15 !important;
+  margin-top:2px !important;
+}
+.other-meta{
+  font-size:8px !important;
+  line-height:1.15 !important;
+  margin-top:2px !important;
+}
+@media(max-width:1250px){
+  .officers-body{grid-template-columns:1fr !important}
+  .other-grid{grid-template-columns:repeat(7,minmax(76px,1fr)) !important}
+}
+@media(max-width:900px){
+  .exec-grid{grid-template-columns:repeat(3,1fr) !important}
+  .other-grid{grid-template-columns:repeat(4,1fr) !important}
+}
+@media(max-width:560px){
+  .exec-grid{grid-template-columns:repeat(3,1fr) !important}
+  .other-grid{grid-template-columns:repeat(3,1fr) !important}
+  .exec-card,.other-card{min-height:76px !important}
+}
+
 </style>
 </head>
 <body>
@@ -174,7 +269,7 @@ main{max-width:1500px;margin:auto;padding:20px 24px 26px}.page{display:none}.pag
           <div class="exec-grid" id="execGrid"></div>
         </div>
         <div class="other-box">
-          <div class="other-title">기타 임원</div>
+          <div class="other-title">기타 임원 (전체)</div>
           <div class="other-grid" id="otherGrid"></div>
         </div>
       </div>
@@ -241,29 +336,33 @@ $("homeBusiness").innerHTML=recentBiz.map(e=>`<div class="biz-item"><div class="
 $("businessList").innerHTML=business.map(e=>`<div class="search-result"><strong>${e.month||""}</strong><p>${String(e.detail||"").replace(/\n/g," · ")}${e.note?" · "+e.note:""}</p></div>`).join("");
 
 // Officers
-const practicalOrder=["회장","감사","총무","서기","재무"];
-const otherOrder=["수석부회장","부회장","명예회장","고문"];
-const rank=(r,a)=>{const i=a.indexOf(r);return i<0?999:i};
-const practical=officers.filter(x=>practicalOrder.includes(x["남서울지방정교회 임원"])).sort((a,b)=>rank(a["남서울지방정교회 임원"],practicalOrder)-rank(b["남서울지방정교회 임원"],practicalOrder));
-const others=officers.filter(x=>otherOrder.includes(x["남서울지방정교회 임원"])).sort((a,b)=>rank(a["남서울지방정교회 임원"],otherOrder)-rank(b["남서울지방정교회 임원"],otherOrder));
-const iconMap={"회장":"●","감사":"✓","총무":"▤","서기":"✎","재무":"₩"};
-$("execGrid").innerHTML=practical.map(x=>`<div class="exec-card"><div class="exec-icon">${iconMap[x["남서울지방정교회 임원"]]||"★"}</div><div class="exec-role">${x["남서울지방정교회 임원"]}</div><div class="exec-name">${x["성명"]}</div><div class="exec-meta">${x["영문"]}</div></div>`).join("");
 
-function otherCard(x){
-  const role=x["남서울지방정교회 임원"]||"";
-  const icon=role==="수석부회장"?"♛":role==="명예회장"?"♚":role==="고문"?"♟":"👥";
-  return `<div class="other-card"><div class="other-icon">${icon}</div><div class="other-role">${role}</div><div class="other-name">${x["성명"]}</div><div class="other-meta">${x["영문"]}</div></div>`;
-}
-const otherSections=[
-  ["수석부회장", others.filter(x=>x["남서울지방정교회 임원"]==="수석부회장")],
-  ["부회장", others.filter(x=>x["남서울지방정교회 임원"]==="부회장")],
-  ["명예회장", others.filter(x=>x["남서울지방정교회 임원"]==="명예회장")],
-  ["고문", others.filter(x=>x["남서울지방정교회 임원"]==="고문")]
-];
-$("otherGrid").innerHTML=otherSections.map(([role,list])=>{
-  if(!list.length)return "";
-  return `<div class="other-section-label">${role}${list.length>1?` (${list.length}명)`:""}</div>`+list.map(otherCard).join("");
-}).join("");
+const practicalOrder=["회장","감사","총무","서기","재무"];
+const practicalOfficers=officers
+  .filter(x=>practicalOrder.includes(x["남서울지방정교회 임원"]))
+  .sort((a,b)=>{
+    const ra=practicalOrder.indexOf(a["남서울지방정교회 임원"]);
+    const rb=practicalOrder.indexOf(b["남서울지방정교회 임원"]);
+    return ra-rb;
+  });
+const otherOfficers=officers.filter(x=>!practicalOrder.includes(x["남서울지방정교회 임원"]));
+
+const iconMap={"회장":"●","감사":"✓","총무":"▤","서기":"✎","재무":"₩"};
+$("execGrid").innerHTML=practicalOfficers.map(x=>`
+  <div class="exec-card">
+    <div class="exec-icon">${iconMap[x["남서울지방정교회 임원"]]||"★"}</div>
+    <div class="exec-role">${x["남서울지방정교회 임원"]}</div>
+    <div class="exec-name">${x["성명"]}</div>
+    <div class="exec-meta">${x["영문"]}</div>
+  </div>`).join("");
+
+$("otherGrid").innerHTML=otherOfficers.map(x=>`
+  <div class="other-card">
+    <div class="other-icon">●</div>
+    <div class="other-role">${x["남서울지방정교회 임원"]}</div>
+    <div class="other-name">${x["성명"]}</div>
+    <div class="other-meta">${x["영문"]}</div>
+  </div>`).join("");
 
 
 // Member table
